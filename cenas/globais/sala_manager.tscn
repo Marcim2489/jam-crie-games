@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dtowrnmi3v345"]
+
+[ext_resource type="Script" uid="uid://bqmkyf4v8qwtu" path="res://scripts/sala_manager.gd" id="1_sj0he"]
+
+[node name="SalaManager" type="Node" unique_id=691834242]
+script = ExtResource("1_sj0he")

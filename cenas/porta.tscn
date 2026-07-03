@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://ba6r1jaeaignu"]
+
+[ext_resource type="Script" uid="uid://cqiijma6qt4x8" path="res://scripts/porta.gd" id="1_an7ts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx7i4"]
+size = Vector2(32, 32)
+
+[node name="porta" type="Area2D" unique_id=1706015082]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_an7ts")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894048105]
+shape = SubResource("RectangleShape2D_wx7i4")

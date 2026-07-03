@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://cwladp56r3sr5"]
+
+[ext_resource type="Script" uid="uid://bcel11xi1hsgy" path="res://scripts/gerador_de_salas.gd" id="1_mtgg2"]
+[ext_resource type="Script" uid="uid://cfajqjhrwfgr4" path="res://scripts/camera_2d.gd" id="2_t4ukd"]
+[ext_resource type="PackedScene" uid="uid://cgpp37rj0iwps" path="res://cenas/player.tscn" id="3_4fhxt"]
+
+[node name="main" type="Node2D" unique_id=72236491 node_paths=PackedStringArray("player")]
+script = ExtResource("1_mtgg2")
+player = NodePath("player")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1355454387]
+zoom = Vector2(2, 2)
+script = ExtResource("2_t4ukd")
+
+[node name="player" parent="." unique_id=175035773 instance=ExtResource("3_4fhxt")]
