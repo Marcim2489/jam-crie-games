@@ -11,13 +11,17 @@ script = ExtResource("1_ropm7")
 position = Vector2(-75, -35)
 
 [node name="inimigo bueiro" parent="." unique_id=384607849 instance=ExtResource("3_ropm7")]
+z_index = 1
 position = Vector2(31, -13)
 
 [node name="inimigo bueiro2" parent="." unique_id=1073452529 instance=ExtResource("3_ropm7")]
+z_index = 1
 position = Vector2(-25, -37)
 
 [node name="inimigo bueiro3" parent="." unique_id=1624088979 instance=ExtResource("3_ropm7")]
+z_index = 1
 position = Vector2(-23, 19)
 
 [node name="inimigo bueiro4" parent="." unique_id=1825270260 instance=ExtResource("3_ropm7")]
+z_index = 1
 position = Vector2(27, 31)

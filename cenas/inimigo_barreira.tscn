@@ -106,7 +106,7 @@ _data = {
 }
 
 [node name="inimigo barreira" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("hurtbox", "guardaProjetil", "sprite", "timerDano")]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 0
@@ -122,7 +122,7 @@ y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_8klna")
 animation = &"ataque"
 autoplay = "ataque"
-frame_progress = 0.2014305
+frame_progress = 0.17181481
 offset = Vector2(0, -7)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1558851243]

@@ -76,6 +76,7 @@ func morrer():
 		return
 	morto = true
 	lifeBar.visible = false
+	velocity = Vector2.ZERO
 	statesKeeper.changeState(statesKeeper.states[3])
 	sprite.play(["calmo veio", "calmo veia"].pick_random())
 	hitboxCollision.set_deferred("disabled", true)

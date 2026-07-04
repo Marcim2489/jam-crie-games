@@ -265,10 +265,9 @@ bg_color = Color(0, 0, 0, 1)
 bg_color = Color(0.78039217, 0, 0, 1)
 
 [node name="boss" type="CharacterBody2D" unique_id=918900491 node_paths=PackedStringArray("hitboxCollision", "maoHitboxCollision", "mao", "eixo", "animPlayer", "cooldownTimer", "statesKeeper", "lifeBar", "hurtbox", "guardaProjetil", "sprite", "timerDano")]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
 collision_layer = 4
-collision_mask = 0
 script = ExtResource("1_5o4le")
 hitboxCollision = NodePath("hitbox/CollisionShape2D2")
 maoHitboxCollision = NodePath("mao/eixo/hitbox mao/CollisionShape2D")

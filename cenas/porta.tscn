@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://ba6r1jaeaignu"]
 
 [ext_resource type="Script" uid="uid://cqiijma6qt4x8" path="res://scripts/porta.gd" id="1_an7ts"]
+[ext_resource type="Texture2D" uid="uid://dv168476n578s" path="res://assets/cenarios/GradeFrente.png" id="2_scu1g"]
+[ext_resource type="Texture2D" uid="uid://b5piqbyuvn5w" path="res://assets/cenarios/Grade Lado.png" id="3_jiw3h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dthrb"]
 size = Vector2(48, 48)
@@ -8,24 +10,59 @@ size = Vector2(48, 48)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx7i4"]
 size = Vector2(32, 32)
 
-[node name="porta" type="Area2D" unique_id=1706015082 node_paths=PackedStringArray("colisao", "visualColisao")]
+[node name="porta" type="Area2D" unique_id=1706015082 node_paths=PackedStringArray("colisao", "visualCima", "visualBaixo", "visualDireita", "visualEsquerda")]
+z_index = 1
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_an7ts")
-colisao = NodePath("Polygon2D/StaticBody2D/CollisionShape2D")
-visualColisao = NodePath("Polygon2D")
+colisao = NodePath("StaticBody2D/CollisionShape2D")
+visualCima = NodePath("grade cima2")
+visualBaixo = NodePath("grade baixo")
+visualDireita = NodePath("gradedireita")
+visualEsquerda = NodePath("grade esquerda2")
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1413131657]
-visible = false
-color = Color(0, 0, 0, 1)
-polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Polygon2D" unique_id=735010847]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=735010847]
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Polygon2D/StaticBody2D" unique_id=1111549721]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1111549721]
 shape = SubResource("RectangleShape2D_dthrb")
 disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894048105]
 shape = SubResource("RectangleShape2D_wx7i4")
+
+[node name="grade cima2" type="Sprite2D" parent="." unique_id=926753908]
+visible = false
+position = Vector2(-8, 20)
+texture = ExtResource("2_scu1g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="grade cima2" unique_id=1836531984]
+position = Vector2(16, 0)
+texture = ExtResource("2_scu1g")
+
+[node name="grade baixo" type="Sprite2D" parent="." unique_id=1824056857]
+visible = false
+position = Vector2(-8, -19)
+texture = ExtResource("2_scu1g")
+
+[node name="Sprite2D2" type="Sprite2D" parent="grade baixo" unique_id=1413062447]
+position = Vector2(16, 0)
+texture = ExtResource("2_scu1g")
+
+[node name="grade esquerda2" type="Sprite2D" parent="." unique_id=924622394]
+visible = false
+position = Vector2(19, 8)
+texture = ExtResource("3_jiw3h")
+
+[node name="grade direita2" type="Sprite2D" parent="grade esquerda2" unique_id=2129012767]
+position = Vector2(0, -16)
+texture = ExtResource("3_jiw3h")
+
+[node name="gradedireita" type="Sprite2D" parent="." unique_id=1230422851]
+visible = false
+position = Vector2(-19, 8)
+texture = ExtResource("3_jiw3h")
+
+[node name="grade esquerda" type="Sprite2D" parent="gradedireita" unique_id=1060285557]
+position = Vector2(0, -16)
+texture = ExtResource("3_jiw3h")

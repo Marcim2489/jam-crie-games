@@ -310,7 +310,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp0j6"]
-size = Vector2(20, 14)
+size = Vector2(16, 14)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx7i4"]
 size = Vector2(14, 15)
@@ -322,7 +322,7 @@ bg_color = Color(0.11, 0.11, 0.11, 1)
 bg_color = Color(0.81, 0, 0, 1)
 
 [node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "boneSprite", "timerImunidade", "hurtbox", "guardaProjetil", "sprite", "timerDano") groups=["Player"]]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
 collision_layer = 2
 collision_mask = 5

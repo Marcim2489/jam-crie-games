@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://b870hpq3jcj76"]
+
+[ext_resource type="Script" uid="uid://b7bpuuto0a4gk" path="res://scripts/menu.gd" id="1_64url"]
+
+[node name="menu" type="Control" unique_id=683345281]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_64url")
+
+[node name="play button" type="Button" parent="." unique_id=1484971799]
+layout_mode = 0
+offset_left = 513.0
+offset_top = 538.0
+offset_right = 801.0
+offset_bottom = 666.0
+theme_override_font_sizes/font_size = 80
+text = "Jogar"
+
+[node name="nome do jogo" type="Label" parent="." unique_id=220791743]
+layout_mode = 0
+offset_left = 252.0
+offset_top = 22.0
+offset_right = 1030.0
+offset_bottom = 197.0
+theme_override_font_sizes/font_size = 128
+text = "Junim"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="nome do jogo2" type="Label" parent="." unique_id=1310798003]
+layout_mode = 0
+offset_left = 257.0
+offset_top = 136.0
+offset_right = 1035.0
+offset_bottom = 337.0
+theme_override_font_sizes/font_size = 96
+text = "contra o mundo"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="play button" to="." method="_on_play_button_pressed"]

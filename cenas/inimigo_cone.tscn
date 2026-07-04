@@ -106,7 +106,7 @@ _data = {
 }
 
 [node name="inimigo cone" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("hurtbox", "guardaProjetil", "sprite", "timerDano")]
-z_index = 1
+z_index = 2
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 0
