@@ -9,7 +9,9 @@ var salasParaReativar : int = 5
 #const ENEMY_CONTAINER_2 = preload("uid://bkw3t2b2blts1")
 const CONTAINERS : Array = [
 	preload("uid://pkyur02kr0cy"),
-	preload("uid://bkw3t2b2blts1")]
+	preload("uid://bkw3t2b2blts1"),
+	preload("uid://462mwy7m5bdd"),
+	preload("uid://21w30a4u03vr")]
 signal ativada
 signal concluida
 

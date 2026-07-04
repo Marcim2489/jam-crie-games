@@ -5,10 +5,15 @@ signal todosDerrotados
 
 func _ready() -> void:
 	y_sort_enabled = true
-	for inimigo : Entidade in get_children():
-		inimigo.morreu.connect(verificarInimigos)
+	for inimigo in get_children():
+		if inimigo is Entidade:
+			inimigo.morreu.connect(verificarInimigos)
 
 func verificarInimigos():
-	if get_children().size()-1 <= 0:
+	var inimigos : Array[Entidade]
+	for c in get_children():
+		if c is Entidade:
+			inimigos.append(c)
+	if inimigos.size()-1 <= 0:
 		todosDerrotados.emit()
 		call_deferred("queue_free")

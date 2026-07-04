@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dxhdi3nemo5jd" path="res://cenas/inimigo_radar.tscn" id="2_sienx"]
 [ext_resource type="PackedScene" uid="uid://djyx8iirpc247" path="res://cenas/inimigo_cone.tscn" id="3_sienx"]
 
-[node name="enemyContainer1" type="Node2D" unique_id=1933527162]
+[node name="enemyContainer2" type="Node2D" unique_id=1933527162]
 script = ExtResource("1_nhu4e")
 
 [node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("2_sienx")]
