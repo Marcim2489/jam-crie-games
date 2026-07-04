@@ -18,6 +18,7 @@ config/icon="res://assets/icon.svg"
 [autoload]
 
 SalaManager="*uid://dtowrnmi3v345"
+MusicPlayer="*uid://s658uk47nun3"
 
 [display]
 
