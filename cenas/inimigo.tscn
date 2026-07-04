@@ -4,8 +4,15 @@
 [ext_resource type="Script" uid="uid://f1cgsdkjwa8j" path="res://scripts/entidade.gd" id="1_l8wry"]
 [ext_resource type="Script" uid="uid://bawd3nipgriib" path="res://scripts/hurtbox.gd" id="3_g2cae"]
 [ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="4_n5rp5"]
+[ext_resource type="Script" uid="uid://6qd1h3du7wy1" path="res://scripts/life_bar.gd" id="5_i1cxn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx7i4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dthrb"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2pcx"]
+bg_color = Color(0.77, 0, 0, 1)
 
 [node name="inimigo" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("hurtbox", "guardaProjetil")]
 collision_layer = 4
@@ -40,3 +47,16 @@ script = ExtResource("4_n5rp5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1440946783]
 shape = SubResource("RectangleShape2D_wx7i4")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1295056947 node_paths=PackedStringArray("source")]
+offset_left = -10.0
+offset_top = 11.0
+offset_right = 10.0
+offset_bottom = 13.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dthrb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a2pcx")
+step = 1.0
+value = 50.0
+show_percentage = false
+script = ExtResource("5_i1cxn")
+source = NodePath("../hurtbox")

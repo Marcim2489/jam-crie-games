@@ -10,7 +10,6 @@ var inimigosAtingidos : int = 0
 func _ready() -> void:
 	if lifeTimer != null:
 		lifeTimer.timeout.connect(finalizarVida)
-		lifeTimer.start()
 	if detectorCenario != null:
 		detectorCenario.body_entered.connect(bodyEntered)
 		detectorCenario.area_entered.connect(areaEntered)

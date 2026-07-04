@@ -28,7 +28,7 @@ var salasUsadas : Array[Vector2i]
 @export var player : Node2D
 @export var minimap : Minimap
 
-var primeiraSala : Vector2i = Vector2i(0,0)
+var primeiraSala : Vector2i
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("resetar"):
@@ -43,6 +43,16 @@ func _ready() -> void:
 			y+=1
 		y=0
 		x+=1
+	
+	primeiraSala = [
+	Vector2i(0,0), Vector2i(2,0), Vector2i(3,0), Vector2i(5,0),
+	Vector2i(0,2), Vector2i(5,2),
+	Vector2i(0,3), Vector2i(5,3),
+	Vector2i(0,5), Vector2i(2,5), Vector2i(3,5), Vector2i(5,5)
+	].pick_random()
+	
+	if salasExistentes.has(primeiraSala) == false:
+		primeiraSala = salasExistentes.pick_random()
 	
 	salasDisponiveis.append(primeiraSala)
 	

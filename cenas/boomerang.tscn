@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://c5t7hnfexwugc"]
+
+[ext_resource type="Script" uid="uid://dw02q7wtanupu" path="res://scripts/boomerang.gd" id="1_luaxi"]
+[ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="2_jcky1"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wx7i4"]
+radius = 6.0
+height = 14.0
+
+[node name="boomerang" type="CharacterBody2D" unique_id=1372900184 node_paths=PackedStringArray("voltarTimer", "lifeTimer", "detectorCenario", "hitbox")]
+script = ExtResource("1_luaxi")
+voltarTimer = NodePath("boomerangTimer")
+desaceleracao = 6000
+aceleracao = 10
+lifeTimer = NodePath("lifetimer")
+detectorCenario = NodePath("detector")
+hitbox = NodePath("hitbox")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004631311]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wx7i4")
+disabled = true
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=593141703]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(4, -6, 8, 0, 4, 6, -4, 6, -8, 0, -4, -6)
+
+[node name="boomerangTimer" type="Timer" parent="." unique_id=293601230]
+wait_time = 0.33
+one_shot = true
+autostart = true
+
+[node name="lifetimer" type="Timer" parent="." unique_id=2084839932]
+wait_time = 1.5
+one_shot = true
+autostart = true
+
+[node name="detector" type="Area2D" parent="." unique_id=1000655803]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detector" unique_id=1818323868]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wx7i4")
+
+[node name="hitbox" type="CharacterBody2D" parent="." unique_id=433768110]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("2_jcky1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=671292788]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wx7i4")

@@ -61,6 +61,7 @@ script = ExtResource("2_t4ukd")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=736991143]
 
 [node name="minimap" type="Node2D" parent="CanvasLayer" unique_id=1479556611 node_paths=PackedStringArray("baseMap", "visibleMap", "playerIcon")]
+position = Vector2(0, 57)
 scale = Vector2(2, 2)
 script = ExtResource("4_bhvw8")
 baseMap = NodePath("basemap")

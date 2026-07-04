@@ -3,13 +3,21 @@
 [ext_resource type="Texture2D" uid="uid://njubn7lqiskg" path="res://assets/icon.svg" id="1_8or6t"]
 [ext_resource type="Script" uid="uid://b5xtub1q7iims" path="res://scripts/player.gd" id="1_unwft"]
 [ext_resource type="Script" uid="uid://bawd3nipgriib" path="res://scripts/hurtbox.gd" id="3_kthid"]
+[ext_resource type="Script" uid="uid://6qd1h3du7wy1" path="res://scripts/life_bar.gd" id="4_xojfc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx7i4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx7i4"]
+bg_color = Color(0.11, 0.11, 0.11, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kthid"]
+bg_color = Color(0.81, 0, 0, 1)
 
 [node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "hurtbox", "guardaProjetil")]
 collision_layer = 2
 script = ExtResource("1_unwft")
 ataqueCooldown = NodePath("ataque cooldown")
+velocidadeProjetil = 250
 hurtbox = NodePath("hurtbox")
 guardaProjetil = NodePath("O")
 
@@ -40,3 +48,18 @@ one_shot = true
 [node name="imunidade" type="Timer" parent="." unique_id=1038680018]
 wait_time = 0.7
 one_shot = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1324677102]
+
+[node name="life bar" type="ProgressBar" parent="CanvasLayer" unique_id=1421212248 node_paths=PackedStringArray("source")]
+offset_left = 20.0
+offset_top = 16.0
+offset_right = 339.0
+offset_bottom = 36.0
+theme_override_styles/background = SubResource("StyleBoxFlat_wx7i4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_kthid")
+step = 1.0
+value = 50.0
+show_percentage = false
+script = ExtResource("4_xojfc")
+source = NodePath("../../hurtbox")
