@@ -7,6 +7,7 @@ var vidaAtual : int
 
 signal morreu
 signal mudouVida (atual : int, max : int)
+signal recebeuDano
 
 var colisoes : Array[CollisionShape2D]
 var colisoesP : Array[CollisionPolygon2D]
@@ -44,6 +45,7 @@ func tomarDano(body : Node2D):
 				p.set_deferred("disabled", true)
 		body.emitirAtingiu()
 		vidaAtual -= body.dano
+		recebeuDano.emit()
 		mudouVida.emit(vidaAtual, vidaMaxima)
 		if(vidaAtual <= 0):
 			vidaAtual = 0

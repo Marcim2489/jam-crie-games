@@ -6,29 +6,72 @@ class_name Player
 @export var projectileOffset : int = 10
 @export var sprite : AnimatedSprite2D
 @export var boneSprite : AnimatedSprite2D
+@export var timerDano : Timer
+@export var timerImunidade : Timer
 
 var direcao : Vector2 = Vector2.ZERO
 var boomerangDisponivel : bool = true
-#const PROJETIL_PLAYER = preload("uid://dyofvx1o31s1q")
 const PROJETIL_PLAYER = preload("uid://c5t7hnfexwugc")
 
+func _ready() -> void:
+	if(hurtbox != null):
+		hurtbox.morreu.connect(morrer)
+		hurtbox.recebeuDano.connect(aoReceberDano)
+
+func aoReceberDano():
+	sprite.self_modulate.g = 0
+	sprite.self_modulate.b = 0
+	sprite.self_modulate.r = 0.7
+	#sprite.self_modulate.a = 0.6
+	timerDano.start()
+	await timerDano.timeout
+	sprite.self_modulate.g = 0.7
+	sprite.self_modulate.b = 0.7
+	sprite.self_modulate.r = 0.7
+	await timerImunidade.timeout
+	sprite.self_modulate.g = 1
+	sprite.self_modulate.b = 1
+	sprite.self_modulate.r = 1
+	#sprite.self_modulate.a = 1
+
 func _process(_delta: float) -> void:
-	direcao = Vector2.ZERO
+	var direcaoAtual : Vector2 = Vector2.ZERO
 	if(Input.is_action_pressed("ui_right")):
-		direcao.x +=1
+		direcaoAtual.x +=1
 	if(Input.is_action_pressed("ui_left")):
-		direcao.x -=1
+		direcaoAtual.x -=1
 	if(Input.is_action_pressed("ui_down")):
-		direcao.y +=1
+		direcaoAtual.y +=1
 	if(Input.is_action_pressed("ui_up")):
-		direcao.y -=1
-	direcao = direcao.normalized()
-	velocity = velocidadeMovimento * direcao
+		direcaoAtual.y -=1
+	direcaoAtual = direcaoAtual.normalized()
+	velocity = velocidadeMovimento * direcaoAtual
+	if direcao != direcaoAtual and direcaoAtual != Vector2.ZERO:
+		direcao = direcaoAtual
 	move_and_slide()
-	if direcao == Vector2.ZERO and sprite.animation != "idle":
-		sprite.play("idle")
-	elif direcao != Vector2.ZERO and sprite.animation != "walk":
-		sprite.play("walk")
+	if direcaoAtual == Vector2.ZERO:
+		print(direcao)
+		if direcao.x != 0:
+			sprite.play("idle side")
+		if direcao.x > 0:
+			sprite.flip_h = false
+		elif direcao.x < 0:
+			sprite.flip_h = true
+		elif direcao.y > 0:
+			sprite.play("idle front")
+		elif direcao.y < 0:
+			sprite.play("idle back")
+	else:
+		if direcao.x != 0:
+			sprite.play("walk side")
+		if direcao.x > 0:
+			sprite.flip_h = false
+		elif direcao.x < 0:
+			sprite.flip_h = true
+		elif direcao.y > 0:
+			sprite.play("walk front")
+		elif direcao.y < 0:
+			sprite.play("walk back")
 	#if Input.is_action_pressed("ataque") and ataqueCooldown.is_stopped():
 		#var direcaoAtaque : Vector2 = (get_global_mouse_position() - global_position).normalized()
 		#var projetilInstancia : Projetil = PROJETIL_PLAYER.instantiate()
