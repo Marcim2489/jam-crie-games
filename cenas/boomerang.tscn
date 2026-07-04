@@ -4,8 +4,8 @@
 [ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="2_jcky1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wx7i4"]
-radius = 6.0
-height = 14.0
+radius = 5.5
+height = 11.0
 
 [node name="boomerang" type="CharacterBody2D" unique_id=1372900184 node_paths=PackedStringArray("voltarTimer", "lifeTimer", "detectorCenario", "hitbox")]
 script = ExtResource("1_luaxi")
@@ -23,7 +23,7 @@ disabled = true
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=593141703]
 color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(4, -6, 8, 0, 4, 6, -4, 6, -8, 0, -4, -6)
+polygon = PackedVector2Array(4, -4, 6, 0, 4, 4, 0, 6, -4, 4, -6, 0, -4, -4, 0, -6)
 
 [node name="boomerangTimer" type="Timer" parent="." unique_id=293601230]
 wait_time = 0.33

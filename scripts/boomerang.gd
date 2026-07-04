@@ -13,6 +13,7 @@ func _ready() -> void:
 		lifeTimer.timeout.connect(finalizarVida)
 	if detectorCenario != null:
 		detectorCenario.body_entered.connect(bodyEntered)
+	SalaManager.mudouSala.connect(finalizarVida)
 		#detectorCenario.area_entered.connect(areaEntered)
 	#if hitbox:
 		#hitbox.atingiu.connect(aoAtingir)
