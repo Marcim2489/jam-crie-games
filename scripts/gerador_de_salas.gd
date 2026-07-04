@@ -26,6 +26,7 @@ var salasUsadas : Array[Vector2i]
 
 @export var totalDeSalas : int = 15
 @export var player : Node2D
+@export var minimap : Minimap
 
 var primeiraSala : Vector2i = Vector2i(0,0)
 
@@ -51,10 +52,11 @@ func _ready() -> void:
 			sala.x*16*18*2,
 			sala.y*16*12*2, 
 		)
-	player.global_position = Vector2i(
-			primeiraSala.x*16*18*2,
-			primeiraSala.y*16*12*2, 
-		)
+	SalaManager.setarSala(primeiraSala, player)
+	#player.global_position = Vector2i(
+			#primeiraSala.x*16*18*2,
+			#primeiraSala.y*16*12*2, 
+		#)
 
 func verificarAdjacencia(sala : Vector2i) -> String:
 	var adjacencias : int = 0
@@ -79,43 +81,59 @@ func verificarAdjacencia(sala : Vector2i) -> String:
 	match adjacencias:
 		1:
 			if cima:
+				minimap.colocarSala(sala, Vector2i(1,0))
 				return SALA_1_CIMA
 			if baixo:
+				minimap.colocarSala(sala, Vector2i(0,0))
 				return SALA_1_BAIXO
 			if direita:
+				minimap.colocarSala(sala, Vector2i(3,0))
 				return SALA_1_DIREITA
 			if esquerda:
+				minimap.colocarSala(sala, Vector2i(2,0))
 				return SALA_1_ESQUERDA
 		2:
 			if cima:
 				if baixo:
+					minimap.colocarSala(sala, Vector2i(0,1))
 					return SALA_2_VERTICAL
 				if direita:
+					minimap.colocarSala(sala, Vector2i(0,2))
 					return SALA_2_CIMA_DIREITA
 				if esquerda:
+					minimap.colocarSala(sala, Vector2i(4,1))
 					return SALA_2_CIMA_ESQUERDA
 			if baixo:
 				if direita:
+					minimap.colocarSala(sala, Vector2i(3,1))
 					return SALA_2_BAIXO_DIREITA
 				if esquerda:
+					minimap.colocarSala(sala, Vector2i(2,1))
 					return SALA_2_BAIXO_ESQUERDA
 			if direita and esquerda:
+				minimap.colocarSala(sala, Vector2i(1,1))
 				return SALA_2_HORIZONTAL
 				
 		3:
 			if cima == false:
+				minimap.colocarSala(sala, Vector2i(3,2))
 				return SALA_3_MCIMA
 			if baixo == false:
+				minimap.colocarSala(sala, Vector2i(1,2))
 				return SALA_3_MBAIXO
 			if direita == false:
+				minimap.colocarSala(sala, Vector2i(4,2))
 				return SALA_3_MDIREITA
 			if esquerda == false:
+				minimap.colocarSala(sala, Vector2i(2,2))
 				return SALA_3_MESQUERDA
 		4:
+			minimap.colocarSala(sala, Vector2i(4,0))
 			return SALA_4
 		_:
+			minimap.colocarSala(sala, Vector2i(4,0))
 			return SALA_4
-	
+	minimap.colocarSala(sala, Vector2i(4,0))
 	return SALA_4
 
 

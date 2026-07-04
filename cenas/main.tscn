@@ -3,13 +3,77 @@
 [ext_resource type="Script" uid="uid://bcel11xi1hsgy" path="res://scripts/gerador_de_salas.gd" id="1_mtgg2"]
 [ext_resource type="Script" uid="uid://cfajqjhrwfgr4" path="res://scripts/camera_2d.gd" id="2_t4ukd"]
 [ext_resource type="PackedScene" uid="uid://cgpp37rj0iwps" path="res://cenas/player.tscn" id="3_4fhxt"]
+[ext_resource type="Texture2D" uid="uid://cussmeq0kexg0" path="res://assets/tilemap minimapa.png" id="4_5wwvk"]
+[ext_resource type="Script" uid="uid://cet5oef8ki4ij" path="res://scripts/minimap.gd" id="4_bhvw8"]
+[ext_resource type="Texture2D" uid="uid://dh7otkt7u35l0" path="res://assets/tilemap minimapa claro.png" id="5_bhvw8"]
 
-[node name="main" type="Node2D" unique_id=72236491 node_paths=PackedStringArray("player")]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_l8342"]
+texture = ExtResource("4_5wwvk")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_v1d1r"]
+texture = ExtResource("5_bhvw8")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_wx7i4"]
+sources/0 = SubResource("TileSetAtlasSource_l8342")
+sources/1 = SubResource("TileSetAtlasSource_v1d1r")
+
+[node name="main" type="Node2D" unique_id=72236491 node_paths=PackedStringArray("player", "minimap")]
 script = ExtResource("1_mtgg2")
 player = NodePath("player")
+minimap = NodePath("CanvasLayer/minimap")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1355454387]
 zoom = Vector2(2, 2)
 script = ExtResource("2_t4ukd")
 
 [node name="player" parent="." unique_id=175035773 instance=ExtResource("3_4fhxt")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=736991143]
+
+[node name="minimap" type="Node2D" parent="CanvasLayer" unique_id=1479556611 node_paths=PackedStringArray("baseMap", "visibleMap", "playerIcon")]
+scale = Vector2(2, 2)
+script = ExtResource("4_bhvw8")
+baseMap = NodePath("basemap")
+visibleMap = NodePath("visible map")
+playerIcon = NodePath("player icon")
+
+[node name="basemap" type="TileMapLayer" parent="CanvasLayer/minimap" unique_id=1419687843]
+tile_set = SubResource("TileSet_wx7i4")
+
+[node name="visible map" type="TileMapLayer" parent="CanvasLayer/minimap" unique_id=719481356]
+tile_set = SubResource("TileSet_wx7i4")
+
+[node name="player icon" type="Polygon2D" parent="CanvasLayer/minimap" unique_id=467238498]
+color = Color(0.85490197, 0, 0, 1)
+offset = Vector2(5, 5)
+polygon = PackedVector2Array(0, 6, 6, 6, 6, 0, 0, 0)
