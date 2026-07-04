@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://bvlvmrxbxdrw7"]
+
+[ext_resource type="Script" uid="uid://2ct8xq2gj07c" path="res://scripts/game_over_screen.gd" id="1_dcq82"]
+
+[node name="game over screen" type="Node2D" unique_id=1439194315]
+script = ExtResource("1_dcq82")
+
+[node name="Label" type="Label" parent="." unique_id=1481854896]
+offset_left = 257.0
+offset_top = 63.0
+offset_right = 991.0
+offset_bottom = 416.0
+theme_override_font_sizes/font_size = 128
+text = "GAME OVER
+"
+
+[node name="RESTART" type="Button" parent="." unique_id=290508481]
+offset_left = 342.0
+offset_top = 479.0
+offset_right = 950.0
+offset_bottom = 575.0
+theme_override_font_sizes/font_size = 64
+text = "Tentar novamente"
+
+[connection signal="pressed" from="RESTART" to="." method="_on_restart_pressed"]

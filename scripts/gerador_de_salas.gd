@@ -60,12 +60,13 @@ func _ready() -> void:
 		adicionarSala(salasDisponiveis.pick_random())
 	
 	for sala : Vector2i in salasUsadas:
-		var instanciaSala : Node2D = load(verificarAdjacencia(sala)).instantiate()
+		var instanciaSala : Sala = load(verificarAdjacencia(sala)).instantiate()
 		add_child(instanciaSala)
 		instanciaSala.global_position = Vector2i(
 			sala.x*SalaManager.tamanhoTile*SalaManager.tilesHorizontal*SalaManager.separacaoEntreSalas,
 			sala.y*SalaManager.tamanhoTile*SalaManager.tilesVertical*SalaManager.separacaoEntreSalas, 
 		)
+		instanciaSala.coordenada = sala
 	SalaManager.setarSala(primeiraSala, player)
 	#player.global_position = Vector2i(
 			#primeiraSala.x*16*18*2,

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://pkyur02kr0cy"]
+
+[ext_resource type="Script" uid="uid://buao67dsl0toa" path="res://scripts/enemy_container.gd" id="1_sixsp"]
+[ext_resource type="PackedScene" uid="uid://dxhdi3nemo5jd" path="res://cenas/inimigo.tscn" id="1_vik4y"]
+
+[node name="enemyContainer1" type="Node2D" unique_id=1933527162]
+script = ExtResource("1_sixsp")
+
+[node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("1_vik4y")]
+position = Vector2(70, -9)
+
+[node name="inimigo2" parent="." unique_id=469919512 instance=ExtResource("1_vik4y")]
+position = Vector2(-37, 25)
+
+[node name="inimigo3" parent="." unique_id=1022038928 instance=ExtResource("1_vik4y")]
+position = Vector2(-38, -25)

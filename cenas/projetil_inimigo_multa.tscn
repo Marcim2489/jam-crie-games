@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://qjjunnrqiwqq"]
+
+[ext_resource type="Script" uid="uid://cgk0bme677wjj" path="res://scripts/projetil.gd" id="1_05l4m"]
+[ext_resource type="Texture2D" uid="uid://in5bm4ytyfyq" path="res://assets/inimigos/Projetil67.png" id="1_uyhed"]
+[ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="3_4d5bs"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05l4m"]
+size = Vector2(8, 13)
+
+[node name="projetil inimigo multa" type="CharacterBody2D" unique_id=1659670993 node_paths=PackedStringArray("lifeTimer", "detectorCenario", "hitbox")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_05l4m")
+lifeTimer = NodePath("life timer")
+detectorCenario = NodePath("detector")
+hitbox = NodePath("hitbox")
+penetracao = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=68914982]
+rotation = 1.5707964
+texture = ExtResource("1_uyhed")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067336291]
+position = Vector2(0, 0.5)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_05l4m")
+disabled = true
+
+[node name="life timer" type="Timer" parent="." unique_id=1633599773]
+
+[node name="hitbox" type="CharacterBody2D" parent="." unique_id=2029996897]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("3_4d5bs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1212874530]
+position = Vector2(-0.5, 0)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_05l4m")
+
+[node name="detector" type="Area2D" parent="." unique_id=1003895564]
+collision_layer = 0
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detector" unique_id=651613620]
+position = Vector2(-0.5, 0)
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_05l4m")

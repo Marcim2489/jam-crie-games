@@ -40,7 +40,6 @@ func aoAtingir():
 		#finalizarVida()
 	pass
 
-
 func _process(delta: float) -> void:
 	if(voltarTimer == null):
 		move_and_slide()

@@ -2,13 +2,30 @@
 
 [ext_resource type="Script" uid="uid://cqiijma6qt4x8" path="res://scripts/porta.gd" id="1_an7ts"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dthrb"]
+size = Vector2(48, 48)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx7i4"]
 size = Vector2(32, 32)
 
-[node name="porta" type="Area2D" unique_id=1706015082]
+[node name="porta" type="Area2D" unique_id=1706015082 node_paths=PackedStringArray("colisao", "visualColisao")]
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_an7ts")
+colisao = NodePath("Polygon2D/StaticBody2D/CollisionShape2D")
+visualColisao = NodePath("Polygon2D")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=1413131657]
+visible = false
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(-24, -24, 24, -24, 24, 24, -24, 24)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Polygon2D" unique_id=735010847]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Polygon2D/StaticBody2D" unique_id=1111549721]
+shape = SubResource("RectangleShape2D_dthrb")
+disabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=894048105]
 shape = SubResource("RectangleShape2D_wx7i4")

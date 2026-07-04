@@ -6,10 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://c77md62712dvo" path="res://assets/JuninCarecaLadoIdle.png" id="3_4y2i1"]
 [ext_resource type="Texture2D" uid="uid://cuwy4t1cj52yf" path="res://assets/JuninCarecaWalk.png" id="3_8v4ht"]
 [ext_resource type="Script" uid="uid://bawd3nipgriib" path="res://scripts/hurtbox.gd" id="3_kthid"]
-[ext_resource type="Texture2D" uid="uid://c3op0oat543fq" path="res://assets/BoneFixo.png" id="4_4y2i1"]
 [ext_resource type="Script" uid="uid://6qd1h3du7wy1" path="res://scripts/life_bar.gd" id="4_xojfc"]
 [ext_resource type="Texture2D" uid="uid://dbc720uyse6qc" path="res://assets/JuninCarecaCostasWalk.png" id="5_8bq56"]
 [ext_resource type="Texture2D" uid="uid://05gcp1vvt3cl" path="res://assets/JuninCarecaLadoWalk.png" id="7_tckef"]
+[ext_resource type="Texture2D" uid="uid://do5dcx8rgfc88" path="res://assets/BoneFixoCostas.png" id="8_8bq56"]
+[ext_resource type="Texture2D" uid="uid://d4m1p7mqca7hs" path="res://assets/BoneFixoLadoEsq.png" id="9_ym2kn"]
+[ext_resource type="Texture2D" uid="uid://cjd07eh3fhogg" path="res://assets/BoneFixoLadoArrumado.png" id="10_tckef"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4uu3"]
 atlas = ExtResource("2_mp0j6")
@@ -269,7 +271,15 @@ animations = [{
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4uu1"]
-atlas = ExtResource("4_4y2i1")
+atlas = ExtResource("8_8bq56")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddxaq"]
+atlas = ExtResource("9_ym2kn")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ulfow"]
+atlas = ExtResource("10_tckef")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_jcky1"]
@@ -279,8 +289,24 @@ animations = [{
 "texture": SubResource("AtlasTexture_j4uu1")
 }],
 "loop": 0,
-"name": &"default",
-"speed": 5.0
+"name": &"costas",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddxaq")
+}],
+"loop": 0,
+"name": &"frente",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ulfow")
+}],
+"loop": 0,
+"name": &"lado",
+"speed": 0.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mp0j6"]
@@ -295,7 +321,7 @@ bg_color = Color(0.11, 0.11, 0.11, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kthid"]
 bg_color = Color(0.81, 0, 0, 1)
 
-[node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "sprite", "boneSprite", "timerDano", "timerImunidade", "hurtbox", "guardaProjetil")]
+[node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "sprite", "boneSprite", "timerDano", "timerImunidade", "hurtbox", "guardaProjetil") groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_unwft")
 ataqueCooldown = NodePath("ataque cooldown")
@@ -310,13 +336,14 @@ guardaProjetil = NodePath("O")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=618093900]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_wx7i4")
-animation = &"walk back"
+animation = &"idle back"
 autoplay = "idle front"
-frame_progress = 0.938
 
 [node name="bone sprite" type="AnimatedSprite2D" parent="." unique_id=716962816]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_jcky1")
+animation = &"lado"
+autoplay = "frente"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1397998837]
 position = Vector2(0, 9)

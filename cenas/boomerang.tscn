@@ -47,6 +47,8 @@ _data = {
 }
 
 [node name="boomerang" type="CharacterBody2D" unique_id=1372900184 node_paths=PackedStringArray("voltarTimer", "lifeTimer", "detectorCenario", "hitbox")]
+collision_layer = 0
+collision_mask = 0
 script = ExtResource("1_luaxi")
 voltarTimer = NodePath("boomerangTimer")
 desaceleracao = 6000
@@ -56,7 +58,6 @@ detectorCenario = NodePath("detector")
 hitbox = NodePath("hitbox")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1323981756]
-rotation = 3.1415927
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("3_jcky1")
 offset = Vector2(0, -2)
@@ -85,7 +86,6 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_wx7i4")
 
 [node name="hitbox" type="CharacterBody2D" parent="." unique_id=433768110]
-rotation = 3.1415927
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("2_jcky1")

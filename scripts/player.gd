@@ -50,28 +50,41 @@ func _process(_delta: float) -> void:
 		direcao = direcaoAtual
 	move_and_slide()
 	if direcaoAtual == Vector2.ZERO:
-		print(direcao)
 		if direcao.x != 0:
 			sprite.play("idle side")
+			boneSprite.play("lado")
 		if direcao.x > 0:
 			sprite.flip_h = false
+			boneSprite.flip_h = false
 		elif direcao.x < 0:
 			sprite.flip_h = true
+			boneSprite.flip_h = true
 		elif direcao.y > 0:
 			sprite.play("idle front")
+			boneSprite.play("frente")
+			boneSprite.flip_h = true
 		elif direcao.y < 0:
 			sprite.play("idle back")
+			boneSprite.play("costas")
+			boneSprite.flip_h = false
 	else:
 		if direcao.x != 0:
 			sprite.play("walk side")
+			boneSprite.play("lado")
 		if direcao.x > 0:
 			sprite.flip_h = false
+			boneSprite.flip_h = false
 		elif direcao.x < 0:
 			sprite.flip_h = true
+			boneSprite.flip_h = true
 		elif direcao.y > 0:
 			sprite.play("walk front")
+			boneSprite.play("frente")
+			boneSprite.flip_h = true
 		elif direcao.y < 0:
 			sprite.play("walk back")
+			boneSprite.play("costas")
+			boneSprite.flip_h = false
 	#if Input.is_action_pressed("ataque") and ataqueCooldown.is_stopped():
 		#var direcaoAtaque : Vector2 = (get_global_mouse_position() - global_position).normalized()
 		#var projetilInstancia : Projetil = PROJETIL_PLAYER.instantiate()
@@ -92,3 +105,9 @@ func _process(_delta: float) -> void:
 func boomerangVoltou():
 	boomerangDisponivel = true
 	boneSprite.visible = true
+
+
+func morrer():
+	morreu.emit()
+	get_tree().call_deferred("change_scene_to_file", "res://cenas/game_over_screen.tscn")
+	#get_tree().change_scene_to_file("res://cenas/game_over_screen.tscn")
