@@ -69,7 +69,7 @@ shape = SubResource("CapsuleShape2D_wx7i4")
 disabled = true
 
 [node name="boomerangTimer" type="Timer" parent="." unique_id=293601230]
-wait_time = 0.33
+wait_time = 0.35
 one_shot = true
 autostart = true
 
