@@ -1,0 +1,191 @@
+[gd_scene format=3 uid="uid://djyx8iirpc247"]
+
+[ext_resource type="Script" uid="uid://f1cgsdkjwa8j" path="res://scripts/entidade.gd" id="1_q4hso"]
+[ext_resource type="Texture2D" uid="uid://syk1eddwc24a" path="res://assets/inimigos/ConeAttack.png" id="2_q4hso"]
+[ext_resource type="Script" uid="uid://bawd3nipgriib" path="res://scripts/hurtbox.gd" id="8_7x38p"]
+[ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="9_4d0bt"]
+[ext_resource type="Script" uid="uid://6qd1h3du7wy1" path="res://scripts/life_bar.gd" id="10_07w75"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64fhb"]
+atlas = ExtResource("2_q4hso")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_quu1l"]
+atlas = ExtResource("2_q4hso")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkd7m"]
+atlas = ExtResource("2_q4hso")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ak4wd"]
+atlas = ExtResource("2_q4hso")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uf1fj"]
+atlas = ExtResource("2_q4hso")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7lmml"]
+atlas = ExtResource("2_q4hso")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ufwc7"]
+atlas = ExtResource("2_q4hso")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rpiwe"]
+atlas = ExtResource("2_q4hso")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43otf"]
+atlas = ExtResource("2_q4hso")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uf1fj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64fhb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_quu1l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkd7m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ak4wd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uf1fj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7lmml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ufwc7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rpiwe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_43otf")
+}],
+"loop": 1,
+"name": &"ataque",
+"speed": 8.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hjbd6"]
+size = Vector2(15, 11)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dthrb"]
+bg_color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2pcx"]
+bg_color = Color(0.77, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_q4hso"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hitbox/CollisionPolygon2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_64fhb"]
+resource_name = "ataque"
+length = 1.125
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("hitbox/CollisionPolygon2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.875),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_quu1l"]
+_data = {
+&"RESET": SubResource("Animation_q4hso"),
+&"ataque": SubResource("Animation_64fhb")
+}
+
+[node name="inimigo cone" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("hurtbox", "guardaProjetil")]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_q4hso")
+velocidadeMovimento = 0
+hurtbox = NodePath("hurtbox")
+guardaProjetil = NodePath("Node")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2120356240]
+z_index = 1
+y_sort_enabled = true
+sprite_frames = SubResource("SpriteFrames_uf1fj")
+animation = &"ataque"
+autoplay = "ataque"
+frame_progress = 0.8995145
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=430073565]
+shape = SubResource("RectangleShape2D_hjbd6")
+disabled = true
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=2025863822]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("8_7x38p")
+vidaMaxima = 20
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hurtbox" unique_id=1259958357]
+polygon = PackedVector2Array(-1, -8, 1, -8, 6, 8, -6, 8)
+
+[node name="Node" type="Node" parent="." unique_id=673895474]
+
+[node name="hitbox" type="CharacterBody2D" parent="." unique_id=1328480869]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("9_4d0bt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="hitbox" unique_id=1440160905]
+polygon = PackedVector2Array(-1, -8, 3, -7, 6, -4, 6, 5, -7, 6, -6, -1, -5, -5)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1295056947 node_paths=PackedStringArray("source")]
+offset_left = -11.0
+offset_top = 17.0
+offset_right = 9.0
+offset_bottom = 19.0
+theme_override_styles/background = SubResource("StyleBoxFlat_dthrb")
+theme_override_styles/fill = SubResource("StyleBoxFlat_a2pcx")
+step = 1.0
+value = 50.0
+show_percentage = false
+script = ExtResource("10_07w75")
+source = NodePath("../hurtbox")
+
+[node name="Timer" type="Timer" parent="." unique_id=730214470]
+wait_time = 0.8
+one_shot = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=18917405]
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1558851243]
+polygon = PackedVector2Array(-2, -1, 2, -1, 3, 7, -3, 7)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1842021461]
+libraries/ = SubResource("AnimationLibrary_quu1l")
+autoplay = &"ataque"

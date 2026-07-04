@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://pkyur02kr0cy"]
 
 [ext_resource type="Script" uid="uid://buao67dsl0toa" path="res://scripts/enemy_container.gd" id="1_sixsp"]
-[ext_resource type="PackedScene" uid="uid://dxhdi3nemo5jd" path="res://cenas/inimigo.tscn" id="1_vik4y"]
+[ext_resource type="PackedScene" uid="uid://dxhdi3nemo5jd" path="res://cenas/inimigo_radar.tscn" id="1_vik4y"]
 
 [node name="enemyContainer1" type="Node2D" unique_id=1933527162]
 script = ExtResource("1_sixsp")

@@ -5,8 +5,11 @@ var coordenada : Vector2i
 var derrotada : bool = false
 var salasViajadas : int = 0
 var salasParaReativar : int = 5
-const ENEMY_CONTAINER_1 = preload("uid://pkyur02kr0cy")
-
+#const ENEMY_CONTAINER_1 = preload("uid://pkyur02kr0cy")
+#const ENEMY_CONTAINER_2 = preload("uid://bkw3t2b2blts1")
+const CONTAINERS : Array = [
+	preload("uid://pkyur02kr0cy"),
+	preload("uid://bkw3t2b2blts1")]
 signal ativada
 signal concluida
 
@@ -31,7 +34,7 @@ func aoMudarSala(coord : Vector2i):
 func spawnarInimigos():
 	#print("inimigos")
 	ativada.emit()
-	var container : EnemyContainer = ENEMY_CONTAINER_1.instantiate()
+	var container : EnemyContainer = CONTAINERS.pick_random().instantiate()
 	add_child(container)
 	container.global_position = global_position
 	container.todosDerrotados.connect(aoDerrotar)

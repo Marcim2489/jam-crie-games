@@ -1,62 +1,62 @@
 [gd_scene format=3 uid="uid://dxhdi3nemo5jd"]
 
-[ext_resource type="Script" uid="uid://cmueelk12qvg4" path="res://scripts/inimigo_radar.gd" id="1_i1cxn"]
-[ext_resource type="Texture2D" uid="uid://c43xqymljwvs4" path="res://assets/inimigos/MaquinaMultaCostasAttack.png" id="2_hjbd6"]
-[ext_resource type="Texture2D" uid="uid://cfqbry6llwsr5" path="res://assets/inimigos/MaquinaMultaFrenteAttack.png" id="3_3mbxo"]
-[ext_resource type="Script" uid="uid://bawd3nipgriib" path="res://scripts/hurtbox.gd" id="3_g2cae"]
-[ext_resource type="Texture2D" uid="uid://bsnl7h1re5rkr" path="res://assets/inimigos/MaquinaMultaLadoAttack.png" id="4_3xy8t"]
-[ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="4_n5rp5"]
-[ext_resource type="Texture2D" uid="uid://cvffi7ww4478e" path="res://assets/inimigos/MaquinaMultaCostas.png" id="5_7m0xs"]
-[ext_resource type="Script" uid="uid://6qd1h3du7wy1" path="res://scripts/life_bar.gd" id="5_i1cxn"]
-[ext_resource type="Texture2D" uid="uid://dnvsc0yfo0vgr" path="res://assets/inimigos/MaquinaMultaFrente.png" id="6_hcxbj"]
-[ext_resource type="Texture2D" uid="uid://de2ic5mdxlvgk" path="res://assets/inimigos/MaquinaMultaLado.png" id="7_rt7ci"]
+[ext_resource type="Script" uid="uid://cmueelk12qvg4" path="res://scripts/inimigo_radar.gd" id="1_y03cf"]
+[ext_resource type="Texture2D" uid="uid://c43xqymljwvs4" path="res://assets/inimigos/MaquinaMultaCostasAttack.png" id="2_gju4y"]
+[ext_resource type="Texture2D" uid="uid://cfqbry6llwsr5" path="res://assets/inimigos/MaquinaMultaFrenteAttack.png" id="3_lphn7"]
+[ext_resource type="Texture2D" uid="uid://bsnl7h1re5rkr" path="res://assets/inimigos/MaquinaMultaLadoAttack.png" id="4_nmivk"]
+[ext_resource type="Texture2D" uid="uid://cvffi7ww4478e" path="res://assets/inimigos/MaquinaMultaCostas.png" id="5_2cq66"]
+[ext_resource type="Texture2D" uid="uid://dnvsc0yfo0vgr" path="res://assets/inimigos/MaquinaMultaFrente.png" id="6_eqkta"]
+[ext_resource type="Texture2D" uid="uid://de2ic5mdxlvgk" path="res://assets/inimigos/MaquinaMultaLado.png" id="7_jbhia"]
+[ext_resource type="Script" uid="uid://bawd3nipgriib" path="res://scripts/hurtbox.gd" id="8_k20lt"]
+[ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="9_g1rwi"]
+[ext_resource type="Script" uid="uid://6qd1h3du7wy1" path="res://scripts/life_bar.gd" id="10_hsi8q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1gaac"]
-atlas = ExtResource("2_hjbd6")
+atlas = ExtResource("2_gju4y")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjffd"]
-atlas = ExtResource("2_hjbd6")
+atlas = ExtResource("2_gju4y")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xvops"]
-atlas = ExtResource("2_hjbd6")
+atlas = ExtResource("2_gju4y")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5ibvd"]
-atlas = ExtResource("3_3mbxo")
+atlas = ExtResource("3_lphn7")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oilmi"]
-atlas = ExtResource("3_3mbxo")
+atlas = ExtResource("3_lphn7")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bpg4a"]
-atlas = ExtResource("3_3mbxo")
+atlas = ExtResource("3_lphn7")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ksxgq"]
-atlas = ExtResource("4_3xy8t")
+atlas = ExtResource("4_nmivk")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_my6pk"]
-atlas = ExtResource("4_3xy8t")
+atlas = ExtResource("4_nmivk")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dx8ka"]
-atlas = ExtResource("4_3xy8t")
+atlas = ExtResource("4_nmivk")
 region = Rect2(0, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vomm0"]
-atlas = ExtResource("5_7m0xs")
+atlas = ExtResource("5_2cq66")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x0ht3"]
-atlas = ExtResource("6_hcxbj")
+atlas = ExtResource("6_eqkta")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ws52t"]
-atlas = ExtResource("7_rt7ci")
+atlas = ExtResource("7_jbhia")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_wx7i4"]
@@ -157,10 +157,10 @@ bg_color = Color(0, 0, 0, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2pcx"]
 bg_color = Color(0.77, 0, 0, 1)
 
-[node name="inimigo" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("animSprite", "cooldownAtaque", "hurtbox", "guardaProjetil")]
+[node name="inimigo radar" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("animSprite", "cooldownAtaque", "hurtbox", "guardaProjetil")]
 collision_layer = 4
 collision_mask = 0
-script = ExtResource("1_i1cxn")
+script = ExtResource("1_y03cf")
 animSprite = NodePath("AnimatedSprite2D")
 cooldownAtaque = NodePath("Timer")
 velocidadeMovimento = 0
@@ -179,7 +179,7 @@ disabled = true
 [node name="hurtbox" type="Area2D" parent="." unique_id=2025863822]
 collision_layer = 0
 collision_mask = 8
-script = ExtResource("3_g2cae")
+script = ExtResource("8_k20lt")
 vidaMaxima = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1024004097]
@@ -202,7 +202,7 @@ shape = SubResource("CapsuleShape2D_3xy8t")
 [node name="hitbox" type="CharacterBody2D" parent="." unique_id=1328480869]
 collision_layer = 16
 collision_mask = 0
-script = ExtResource("4_n5rp5")
+script = ExtResource("9_g1rwi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1440946783]
 position = Vector2(-1, 1)
@@ -224,7 +224,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_a2pcx")
 step = 1.0
 value = 50.0
 show_percentage = false
-script = ExtResource("5_i1cxn")
+script = ExtResource("10_hsi8q")
 source = NodePath("../hurtbox")
 
 [node name="Timer" type="Timer" parent="." unique_id=730214470]

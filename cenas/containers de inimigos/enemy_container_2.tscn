@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bkw3t2b2blts1"]
+
+[ext_resource type="Script" uid="uid://buao67dsl0toa" path="res://scripts/enemy_container.gd" id="1_nhu4e"]
+[ext_resource type="PackedScene" uid="uid://dxhdi3nemo5jd" path="res://cenas/inimigo_radar.tscn" id="2_sienx"]
+[ext_resource type="PackedScene" uid="uid://djyx8iirpc247" path="res://cenas/inimigo_cone.tscn" id="3_sienx"]
+
+[node name="enemyContainer1" type="Node2D" unique_id=1933527162]
+script = ExtResource("1_nhu4e")
+
+[node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("2_sienx")]
+position = Vector2(70, -9)
+
+[node name="inimigo cone" parent="." unique_id=927798106 instance=ExtResource("3_sienx")]
+position = Vector2(-28, -26)
+
+[node name="inimigo cone2" parent="." unique_id=380323665 instance=ExtResource("3_sienx")]
+position = Vector2(24, -27)
+
+[node name="inimigo cone3" parent="." unique_id=1629786133 instance=ExtResource("3_sienx")]
+position = Vector2(66, 26)
+
+[node name="inimigo cone4" parent="." unique_id=297414597 instance=ExtResource("3_sienx")]
+position = Vector2(-17, 23)

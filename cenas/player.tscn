@@ -335,12 +335,14 @@ guardaProjetil = NodePath("O")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=618093900]
 z_index = 1
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_wx7i4")
 animation = &"idle back"
 autoplay = "idle front"
 
 [node name="bone sprite" type="AnimatedSprite2D" parent="." unique_id=716962816]
 z_index = 1
+y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_jcky1")
 animation = &"lado"
 autoplay = "frente"
