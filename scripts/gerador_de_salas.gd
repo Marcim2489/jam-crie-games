@@ -1,25 +1,26 @@
 extends Node
 class_name GeradorDeSalas
 
-const SALA_1_BAIXO : String = "uid://75jsx1obehin"
-const SALA_1_CIMA : String = "uid://wg50eu5ylb3m"
-const SALA_1_DIREITA : String = "uid://cswresj13x7l6"
-const SALA_1_ESQUERDA : String = "uid://b3hg7sgcrsqra"
-const SALA_2_BAIXO_DIREITA : String = "uid://bjxxg5i6phwyg"
-const SALA_2_BAIXO_ESQUERDA : String = "uid://d4fa850shyu5c"
-const SALA_2_CIMA_DIREITA : String = "uid://cgwepxik1k18y"
-const SALA_2_CIMA_ESQUERDA : String = "uid://dmb8o6m5bjf6i"
-const SALA_2_HORIZONTAL : String = "uid://ssjy6c74tsw4"
-const SALA_2_VERTICAL : String = "uid://j3wxchbqg1kb"
-const SALA_3_MBAIXO : String = "uid://ddilrtu71cbhc"
-const SALA_3_MCIMA : String = "uid://cxy8r3afxo7dk"
-const SALA_3_MDIREITA : String = "uid://cfbx6qoj0y75s"
-const SALA_3_MESQUERDA : String = "uid://bpxbkclkntq63"
-const SALA_4 : String = "uid://dq48h1wr1t0s6"
+const SALA_1_BAIXO : Array[String] = ["uid://75jsx1obehin"]
+const SALA_1_CIMA : Array[String] = ["uid://wg50eu5ylb3m"]
+const SALA_1_DIREITA : Array[String] = ["uid://cswresj13x7l6"]
+const SALA_1_ESQUERDA : Array[String] = ["uid://b3hg7sgcrsqra"]
+const SALA_2_BAIXO_DIREITA : Array[String] = ["uid://bjxxg5i6phwyg"]
+const SALA_2_BAIXO_ESQUERDA :Array[String] = ["uid://d4fa850shyu5c"]
+const SALA_2_CIMA_DIREITA : Array[String] = ["uid://cgwepxik1k18y"]
+const SALA_2_CIMA_ESQUERDA : Array[String] = ["uid://dmb8o6m5bjf6i"]
+const SALA_2_HORIZONTAL : Array[String] = ["uid://ssjy6c74tsw4"]
+const SALA_2_VERTICAL : Array[String] = ["uid://j3wxchbqg1kb"]
+const SALA_3_MBAIXO : Array[String] = ["uid://ddilrtu71cbhc"]
+const SALA_3_MCIMA : Array[String] = ["uid://cxy8r3afxo7dk"]
+const SALA_3_MDIREITA : Array[String] = ["uid://cfbx6qoj0y75s"]
+const SALA_3_MESQUERDA : Array[String] = ["uid://bpxbkclkntq63"]
+const SALA_4 : Array[String] = ["uid://dq48h1wr1t0s6"]
 
 var salasExistentes : Array[Vector2i]
 var salasDisponiveis : Array[Vector2i]
 var salasUsadas : Array[Vector2i]
+var salasRaras : Array[Vector2i]
 
 @export var colunas : int = 6
 @export var linhas : int = 6
@@ -62,24 +63,31 @@ func _ready() -> void:
 	var ultimaSala : Vector2i = salasUsadas[salasUsadas.size()-1]
 	var maiorDistanciaAtual : float = 0
 	
+	var i : int = 0 
 	for sala : Vector2i in salasUsadas:
 		var distanciaSala : float = sala.distance_to(primeiraSala)
 		if distanciaSala > maiorDistanciaAtual:
 			maiorDistanciaAtual = distanciaSala
 			ultimaSala = sala
-		var instanciaSala : Sala = load(verificarAdjacencia(sala)).instantiate()
+		var rara : bool = false
+		if i == 4 or i == 8 or i == 12:
+			salasRaras.append(sala)
+			rara = true
+		var instanciaSala : Sala = load(verificarAdjacencia(sala, rara)).instantiate()
 		add_child(instanciaSala)
 		instanciaSala.global_position = Vector2i(
 			sala.x*SalaManager.tamanhoTile*SalaManager.tilesHorizontal*SalaManager.separacaoEntreSalas,
 			sala.y*SalaManager.tamanhoTile*SalaManager.tilesVertical*SalaManager.separacaoEntreSalas, 
 		)
 		instanciaSala.coordenada = sala
+		i+=1
 	SalaManager.salaFinal = ultimaSala
 	SalaManager.setarSala(primeiraSala, player)
 	minimap.posicionarIconeBoss(ultimaSala)
 	minimap.posicionarIconeInicial(primeiraSala)
+	minimap.posicionarIconesRaridade(salasRaras)
 
-func verificarAdjacencia(sala : Vector2i) -> String:
+func verificarAdjacencia(sala : Vector2i, rara : bool) -> String:
 	var adjacencias : int = 0
 	var cima : bool = false
 	var baixo : bool = false
@@ -103,59 +111,59 @@ func verificarAdjacencia(sala : Vector2i) -> String:
 		1:
 			if cima:
 				minimap.colocarSala(sala, Vector2i(1,0))
-				return SALA_1_CIMA
+				return SALA_1_CIMA.pick_random()
 			if baixo:
 				minimap.colocarSala(sala, Vector2i(0,0))
-				return SALA_1_BAIXO
+				return SALA_1_BAIXO.pick_random()
 			if direita:
 				minimap.colocarSala(sala, Vector2i(3,0))
-				return SALA_1_DIREITA
+				return SALA_1_DIREITA.pick_random()
 			if esquerda:
 				minimap.colocarSala(sala, Vector2i(2,0))
-				return SALA_1_ESQUERDA
+				return SALA_1_ESQUERDA.pick_random()
 		2:
 			if cima:
 				if baixo:
 					minimap.colocarSala(sala, Vector2i(0,1))
-					return SALA_2_VERTICAL
+					return SALA_2_VERTICAL.pick_random()
 				if direita:
 					minimap.colocarSala(sala, Vector2i(0,2))
-					return SALA_2_CIMA_DIREITA
+					return SALA_2_CIMA_DIREITA.pick_random()
 				if esquerda:
 					minimap.colocarSala(sala, Vector2i(4,1))
-					return SALA_2_CIMA_ESQUERDA
+					return SALA_2_CIMA_ESQUERDA.pick_random()
 			if baixo:
 				if direita:
 					minimap.colocarSala(sala, Vector2i(3,1))
-					return SALA_2_BAIXO_DIREITA
+					return SALA_2_BAIXO_DIREITA.pick_random()
 				if esquerda:
 					minimap.colocarSala(sala, Vector2i(2,1))
-					return SALA_2_BAIXO_ESQUERDA
+					return SALA_2_BAIXO_ESQUERDA.pick_random()
 			if direita and esquerda:
 				minimap.colocarSala(sala, Vector2i(1,1))
-				return SALA_2_HORIZONTAL
+				return SALA_2_HORIZONTAL.pick_random()
 				
 		3:
 			if cima == false:
 				minimap.colocarSala(sala, Vector2i(3,2))
-				return SALA_3_MCIMA
+				return SALA_3_MCIMA.pick_random()
 			if baixo == false:
 				minimap.colocarSala(sala, Vector2i(1,2))
-				return SALA_3_MBAIXO
+				return SALA_3_MBAIXO.pick_random()
 			if direita == false:
 				minimap.colocarSala(sala, Vector2i(4,2))
-				return SALA_3_MDIREITA
+				return SALA_3_MDIREITA.pick_random()
 			if esquerda == false:
 				minimap.colocarSala(sala, Vector2i(2,2))
-				return SALA_3_MESQUERDA
+				return SALA_3_MESQUERDA.pick_random()
 		4:
 			minimap.colocarSala(sala, Vector2i(4,0))
-			return SALA_4
+			return SALA_4.pick_random()
 		_:
 			minimap.colocarSala(sala, Vector2i(4,0))
-			return SALA_4
+			return SALA_4.pick_random()
 	minimap.colocarSala(sala, Vector2i(4,0))
-	return SALA_4
+	return SALA_4.pick_random()
 
 func adicionarSala(sala : Vector2i):
 	if (salasExistentes.has(sala)==false or salasDisponiveis.has(sala)==false

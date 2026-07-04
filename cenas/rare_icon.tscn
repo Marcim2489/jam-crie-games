@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://12tt7au33e7j"]
+
+[node name="rare icon" type="Polygon2D" unique_id=1285720128]
+color = Color(0.8216667, 0.85, 0, 1)
+offset = Vector2(5, 5)
+polygon = PackedVector2Array(-0.5, 6.5, 6.5, 6.5, 6.5, -0.5, -0.5, -0.5)

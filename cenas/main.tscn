@@ -58,10 +58,11 @@ zoom = Vector2(3, 3)
 script = ExtResource("2_t4ukd")
 
 [node name="player" parent="." unique_id=175035773 instance=ExtResource("3_4fhxt")]
+position = Vector2(-8, -11)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=736991143]
 
-[node name="minimap" type="Node2D" parent="CanvasLayer" unique_id=1479556611 node_paths=PackedStringArray("baseMap", "visibleMap", "playerIcon", "bossIcon", "initialIcon")]
+[node name="minimap" type="Node2D" parent="CanvasLayer" unique_id=1479556611 node_paths=PackedStringArray("baseMap", "visibleMap", "playerIcon", "bossIcon", "rareIcon1", "rareIcon2", "rareIcon3", "initialIcon")]
 position = Vector2(0, 57)
 scale = Vector2(2, 2)
 script = ExtResource("4_bhvw8")
@@ -69,6 +70,9 @@ baseMap = NodePath("basemap")
 visibleMap = NodePath("visible map")
 playerIcon = NodePath("player icon")
 bossIcon = NodePath("boss icon")
+rareIcon1 = NodePath("icon")
+rareIcon2 = NodePath("Polygon2D")
+rareIcon3 = NodePath("Polygon2D2")
 initialIcon = NodePath("inicial icon")
 
 [node name="basemap" type="TileMapLayer" parent="CanvasLayer/minimap" unique_id=1419687843]
@@ -83,11 +87,27 @@ offset = Vector2(5, 5)
 polygon = PackedVector2Array(-0.5, 6.5, 6.5, 6.5, 6.5, -0.5, -0.5, -0.5)
 
 [node name="inicial icon" type="Polygon2D" parent="CanvasLayer/minimap" unique_id=1744218087]
-color = Color(0, 0.73, 0.2920001, 1)
+color = Color(0, 0.54, 0.089999914, 1)
 offset = Vector2(5, 5)
 polygon = PackedVector2Array(-0.5, 6.5, 6.5, 6.5, 6.5, -0.5, -0.5, -0.5)
 
-[node name="player icon" type="Polygon2D" parent="CanvasLayer/minimap" unique_id=467238498]
-color = Color(0.98, 0.76766664, 0, 1)
+[node name="icon" type="Polygon2D" parent="CanvasLayer/minimap" unique_id=1030039465]
+color = Color(1, 1, 0, 1)
 offset = Vector2(5, 5)
-polygon = PackedVector2Array(0, 6, 6, 6, 6, 0, 0, 0)
+polygon = PackedVector2Array(-0.5, -0.5, 6.5, -0.5, 6.5, 6.5, -0.5, 6.5)
+
+[node name="Polygon2D" type="Polygon2D" parent="CanvasLayer/minimap" unique_id=89362080]
+color = Color(1, 1, 0, 1)
+offset = Vector2(5, 5)
+polygon = PackedVector2Array(-0.5, -0.5, 6.5, -0.5, 6.5, 6.5, -0.5, 6.5)
+
+[node name="Polygon2D2" type="Polygon2D" parent="CanvasLayer/minimap" unique_id=1440505916]
+color = Color(1, 1, 0, 1)
+offset = Vector2(5, 5)
+polygon = PackedVector2Array(-0.5, -0.5, 6.5, -0.5, 6.5, 6.5, -0.5, 6.5)
+
+[node name="player icon" type="Polygon2D" parent="CanvasLayer/minimap" unique_id=467238498]
+z_index = 1
+color = Color(0, 0.1500001, 1, 1)
+offset = Vector2(5, 5)
+polygon = PackedVector2Array(0.5, 5.5, 5.5, 5.5, 5.5, 0.5, 0.5, 0.5)

@@ -5,10 +5,19 @@ class_name Minimap
 @export var visibleMap : TileMapLayer
 @export var playerIcon : Node2D
 @export var bossIcon : Node2D
+@export var rareIcon1 : Node2D
+@export var rareIcon2 : Node2D
+@export var rareIcon3 : Node2D
 @export var initialIcon : Node2D
+const RARE_ICON = preload("uid://12tt7au33e7j")
 
 func _ready() -> void:
 	SalaManager.entrouNaSala.connect(mostrarSala)
+
+func posicionarIconesRaridade(salas : Array[Vector2i]):
+	rareIcon1.position = salas[0] * 16
+	rareIcon2.position = salas[1] * 16
+	rareIcon3.position = salas[2] * 16
 
 func posicionarIconeBoss(coord : Vector2i):
 	bossIcon.position = coord * 16
