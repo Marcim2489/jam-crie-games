@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://besef31ukj3dy"]
+
+[ext_resource type="Script" uid="uid://b7necehowv7qm" path="res://scripts/pause_menu.gd" id="1_jsi4g"]
+
+[node name="PAUSE MENU" type="Label" unique_id=361668171]
+process_mode = 3
+offset_left = 474.0
+offset_top = 88.0
+offset_right = 774.0
+offset_bottom = 220.0
+theme_override_font_sizes/font_size = 96
+text = "PAUSE"
+script = ExtResource("1_jsi4g")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1804359580]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 159.0
+offset_right = 247.0
+offset_bottom = 392.0
+
+[node name="resume" type="Button" parent="VBoxContainer" unique_id=475167960]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Resume"
+
+[node name="restart" type="Button" parent="VBoxContainer" unique_id=1619542316]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Restart"
+
+[node name="menu" type="Button" parent="VBoxContainer" unique_id=1883072454]
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "Menu
+"
+
+[connection signal="button_down" from="VBoxContainer/resume" to="." method="_on_resume_button_down"]
+[connection signal="button_up" from="VBoxContainer/resume" to="." method="_on_resume_button_up"]
+[connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
+[connection signal="button_down" from="VBoxContainer/restart" to="." method="_on_restart_button_down"]
+[connection signal="button_up" from="VBoxContainer/restart" to="." method="_on_restart_button_up"]
+[connection signal="pressed" from="VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="button_down" from="VBoxContainer/menu" to="." method="_on_menu_button_down"]
+[connection signal="button_up" from="VBoxContainer/menu" to="." method="_on_menu_button_up"]
+[connection signal="pressed" from="VBoxContainer/menu" to="." method="_on_menu_pressed"]

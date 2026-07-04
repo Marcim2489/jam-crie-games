@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://do5dcx8rgfc88" path="res://assets/BoneFixoCostas.png" id="8_8bq56"]
 [ext_resource type="Texture2D" uid="uid://d4m1p7mqca7hs" path="res://assets/BoneFixoLadoEsq.png" id="9_ym2kn"]
 [ext_resource type="Texture2D" uid="uid://cjd07eh3fhogg" path="res://assets/BoneFixoLadoArrumado.png" id="10_tckef"]
+[ext_resource type="PackedScene" uid="uid://besef31ukj3dy" path="res://cenas/pause_menu.tscn" id="13_ym2kn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4uu3"]
 atlas = ExtResource("2_mp0j6")
@@ -387,6 +388,8 @@ value = 50.0
 show_percentage = false
 script = ExtResource("4_xojfc")
 source = NodePath("../../hurtbox")
+
+[node name="PAUSE MENU" parent="CanvasLayer" unique_id=361668171 instance=ExtResource("13_ym2kn")]
 
 [node name="daninho" type="Timer" parent="." unique_id=1920956024]
 wait_time = 0.08

@@ -28,9 +28,9 @@ var salasUsadas : Array[Vector2i]
 @export var player : Node2D
 @export var minimap : Minimap
 
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("resetar"):
-		get_tree().reload_current_scene()
+#func _input(event: InputEvent) -> void:
+	#if event.is_action_pressed("resetar"):
+		#get_tree().reload_current_scene()
 
 func _ready() -> void:
 	var x : int = 0
