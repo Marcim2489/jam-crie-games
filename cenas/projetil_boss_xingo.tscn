@@ -1,28 +1,26 @@
-[gd_scene format=3 uid="uid://qjjunnrqiwqq"]
+[gd_scene format=3 uid="uid://cng72e2buexmu"]
 
-[ext_resource type="Script" uid="uid://cgk0bme677wjj" path="res://scripts/projetil.gd" id="1_05l4m"]
-[ext_resource type="Texture2D" uid="uid://in5bm4ytyfyq" path="res://assets/inimigos/Projetil67.png" id="1_uyhed"]
-[ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="3_4d5bs"]
+[ext_resource type="Script" uid="uid://cgk0bme677wjj" path="res://scripts/projetil.gd" id="1_gyb58"]
+[ext_resource type="Texture2D" uid="uid://dwxkyhm0do5rv" path="res://assets/inimigos/boss/ProjetilXingo.png" id="2_gyb58"]
+[ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="3_l8ct6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_05l4m"]
-size = Vector2(8, 13)
+size = Vector2(6, 16)
 
-[node name="projetil inimigo multa" type="CharacterBody2D" unique_id=1659670993 node_paths=PackedStringArray("lifeTimer", "detectorCenario", "hitbox")]
+[node name="projetil boss xingo" type="CharacterBody2D" unique_id=1659670993 node_paths=PackedStringArray("lifeTimer", "detectorCenario", "hitbox")]
 z_index = 2
 collision_layer = 0
 collision_mask = 0
-script = ExtResource("1_05l4m")
+script = ExtResource("1_gyb58")
 lifeTimer = NodePath("life timer")
 detectorCenario = NodePath("detector")
 hitbox = NodePath("hitbox")
 penetracao = 1
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=68914982]
-rotation = 1.5707964
-texture = ExtResource("1_uyhed")
+texture = ExtResource("2_gyb58")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2067336291]
-position = Vector2(0, 0.5)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_05l4m")
 disabled = true
@@ -34,10 +32,10 @@ one_shot = true
 [node name="hitbox" type="CharacterBody2D" parent="." unique_id=2029996897]
 collision_layer = 16
 collision_mask = 0
-script = ExtResource("3_4d5bs")
+script = ExtResource("3_l8ct6")
+dano = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1212874530]
-position = Vector2(-0.5, 0)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_05l4m")
 
@@ -46,6 +44,5 @@ collision_layer = 0
 collision_mask = 33
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="detector" unique_id=651613620]
-position = Vector2(-0.5, 0)
 rotation = 1.5707964
 shape = SubResource("RectangleShape2D_05l4m")

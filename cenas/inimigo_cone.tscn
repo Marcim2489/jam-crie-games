@@ -105,7 +105,7 @@ _data = {
 &"ataque": SubResource("Animation_64fhb")
 }
 
-[node name="inimigo cone" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("hurtbox", "guardaProjetil")]
+[node name="inimigo cone" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("hurtbox", "guardaProjetil", "sprite", "timerDano")]
 z_index = 1
 y_sort_enabled = true
 collision_layer = 4
@@ -114,6 +114,8 @@ script = ExtResource("1_q4hso")
 velocidadeMovimento = 0
 hurtbox = NodePath("hurtbox")
 guardaProjetil = NodePath("Node")
+sprite = NodePath("AnimatedSprite2D")
+timerDano = NodePath("Timer")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2120356240]
 y_sort_enabled = true
@@ -163,7 +165,7 @@ script = ExtResource("10_07w75")
 source = NodePath("../hurtbox")
 
 [node name="Timer" type="Timer" parent="." unique_id=730214470]
-wait_time = 0.8
+wait_time = 0.15
 one_shot = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1842021461]

@@ -4,9 +4,7 @@ class_name Player
 @export var ataqueCooldown : Timer
 @export var velocidadeProjetil : int = 180
 @export var projectileOffset : int = 10
-@export var sprite : AnimatedSprite2D
 @export var boneSprite : AnimatedSprite2D
-@export var timerDano : Timer
 @export var timerImunidade : Timer
 
 var direcao : Vector2 = Vector2.ZERO

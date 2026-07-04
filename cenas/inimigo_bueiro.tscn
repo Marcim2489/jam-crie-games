@@ -105,7 +105,7 @@ y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_xhltg")
 animation = &"ataque"
 autoplay = "ataque"
-frame_progress = 0.99955577
+frame_progress = 0.9937084
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1558851243]
 position = Vector2(0, -1)

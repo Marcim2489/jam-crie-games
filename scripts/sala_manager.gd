@@ -5,6 +5,9 @@ var salaAtual : Vector2i
 signal entrouNaSala (sala : Vector2i)
 signal mudouSala
 
+var salaInicial : Vector2i
+var salaFinal : Vector2i
+
 var tamanhoTile : int = 16
 var tilesHorizontal = 18
 var tilesVertical = 12

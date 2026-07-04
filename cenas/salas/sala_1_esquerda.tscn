@@ -23,5 +23,5 @@ tile_map_data = PackedByteArray("AAD4/wMAAAABAAAAAAD5/wMAAAABAAAAAAD6/wMAAAABAAA
 tile_set = SubResource("TileSet_wx7i4")
 
 [node name="porta" parent="." unique_id=1706015082 instance=ExtResource("2_7p25k")]
-position = Vector2(-151, 0)
+position = Vector2(-152, 0)
 direcao = 3

@@ -157,17 +157,18 @@ bg_color = Color(0, 0, 0, 0)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_a2pcx"]
 bg_color = Color(0.77, 0, 0, 1)
 
-[node name="inimigo radar" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("animSprite", "cooldownAtaque", "hurtbox", "guardaProjetil")]
+[node name="inimigo radar" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("cooldownAtaque", "hurtbox", "guardaProjetil", "sprite", "timerDano")]
 z_index = 1
 y_sort_enabled = true
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_y03cf")
-animSprite = NodePath("AnimatedSprite2D")
-cooldownAtaque = NodePath("Timer")
+cooldownAtaque = NodePath("cooldown")
 velocidadeMovimento = 0
 hurtbox = NodePath("hurtbox")
 guardaProjetil = NodePath("Node")
+sprite = NodePath("AnimatedSprite2D")
+timerDano = NodePath("timer dano")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2120356240]
 sprite_frames = SubResource("SpriteFrames_wx7i4")
@@ -230,6 +231,10 @@ show_percentage = false
 script = ExtResource("10_hsi8q")
 source = NodePath("../hurtbox")
 
-[node name="Timer" type="Timer" parent="." unique_id=730214470]
+[node name="cooldown" type="Timer" parent="." unique_id=730214470]
 wait_time = 0.8
+one_shot = true
+
+[node name="timer dano" type="Timer" parent="." unique_id=1729938640]
+wait_time = 0.15
 one_shot = true

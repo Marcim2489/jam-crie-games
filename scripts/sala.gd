@@ -12,6 +12,8 @@ const CONTAINERS : Array = [
 	preload("uid://bkw3t2b2blts1"),
 	preload("uid://462mwy7m5bdd"),
 	preload("uid://21w30a4u03vr")]
+const BOSS = preload("uid://cdy4qpwjjpfwt")
+
 signal ativada
 signal concluida
 
@@ -20,6 +22,15 @@ func _ready() -> void:
 	y_sort_enabled = true
 
 func aoMudarSala(coord : Vector2i):
+	if coord == SalaManager.salaFinal and coord == coordenada:
+		ativada.emit()
+		var boss : Boss = BOSS.instantiate()
+		add_child(boss)
+		boss.global_position = global_position
+		boss.morreu.connect(aoDerrotar)
+		return
+	if coord == SalaManager.salaInicial:
+		return
 	if coord != coordenada:
 		for c in get_children():
 			if c is EnemyContainer:

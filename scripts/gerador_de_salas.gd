@@ -28,8 +28,6 @@ var salasUsadas : Array[Vector2i]
 @export var player : Node2D
 @export var minimap : Minimap
 
-var primeiraSala : Vector2i
-
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("resetar"):
 		get_tree().reload_current_scene()
@@ -44,7 +42,7 @@ func _ready() -> void:
 		y=0
 		x+=1
 	
-	primeiraSala = [
+	var primeiraSala : Vector2i = [
 	Vector2i(0,0), Vector2i(2,0), Vector2i(3,0), Vector2i(5,0),
 	Vector2i(0,2), Vector2i(5,2),
 	Vector2i(0,3), Vector2i(5,3),
@@ -54,12 +52,20 @@ func _ready() -> void:
 	if salasExistentes.has(primeiraSala) == false:
 		primeiraSala = salasExistentes.pick_random()
 	
+	SalaManager.salaInicial = primeiraSala
 	salasDisponiveis.append(primeiraSala)
 	
 	while(salasUsadas.size() < totalDeSalas):
 		adicionarSala(salasDisponiveis.pick_random())
+		
+	var ultimaSala : Vector2i = salasUsadas[salasUsadas.size()-1]
+	var maiorDistanciaAtual : float = 0
 	
 	for sala : Vector2i in salasUsadas:
+		var distanciaSala : float = sala.distance_to(primeiraSala)
+		if distanciaSala > maiorDistanciaAtual:
+			maiorDistanciaAtual = distanciaSala
+			ultimaSala = sala
 		var instanciaSala : Sala = load(verificarAdjacencia(sala)).instantiate()
 		add_child(instanciaSala)
 		instanciaSala.global_position = Vector2i(
@@ -67,11 +73,10 @@ func _ready() -> void:
 			sala.y*SalaManager.tamanhoTile*SalaManager.tilesVertical*SalaManager.separacaoEntreSalas, 
 		)
 		instanciaSala.coordenada = sala
+	SalaManager.salaFinal = ultimaSala
 	SalaManager.setarSala(primeiraSala, player)
-	#player.global_position = Vector2i(
-			#primeiraSala.x*16*18*2,
-			#primeiraSala.y*16*12*2, 
-		#)
+	minimap.posicionarIconeBoss(ultimaSala)
+	minimap.posicionarIconeInicial(primeiraSala)
 
 func verificarAdjacencia(sala : Vector2i) -> String:
 	var adjacencias : int = 0
@@ -150,9 +155,6 @@ func verificarAdjacencia(sala : Vector2i) -> String:
 			return SALA_4
 	minimap.colocarSala(sala, Vector2i(4,0))
 	return SALA_4
-
-
-
 
 func adicionarSala(sala : Vector2i):
 	if (salasExistentes.has(sala)==false or salasDisponiveis.has(sala)==false
