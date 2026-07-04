@@ -4,7 +4,7 @@ class_name Hurtbox
 @export var vidaMaxima : int = 100
 @export var imunidadeTimer : Timer
 var vidaAtual : int
-
+var defesa : int = 0
 signal morreu
 signal mudouVida (atual : int, max : int)
 signal recebeuDano
@@ -44,7 +44,10 @@ func tomarDano(body : Node2D):
 			for p in colisoesP:
 				p.set_deferred("disabled", true)
 		body.emitirAtingiu()
-		vidaAtual -= body.dano
+		var d : int = body.dano - defesa
+		if d < 1:
+			d = 1 
+		vidaAtual -= d
 		recebeuDano.emit()
 		mudouVida.emit(vidaAtual, vidaMaxima)
 		if(vidaAtual <= 0):

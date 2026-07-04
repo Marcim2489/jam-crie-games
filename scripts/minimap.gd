@@ -18,11 +18,11 @@ var salaRara3 : Vector2i
 
 func _ready() -> void:
 	SalaManager.entrouNaSala.connect(mostrarSala)
-	bossIcon.visible = false
-	initialIcon.visible = false
-	rareIcon1.visible = false
-	rareIcon2.visible = false
-	rareIcon3.visible = false
+	#bossIcon.visible = false
+	#initialIcon.visible = false
+	#rareIcon1.visible = false
+	#rareIcon2.visible = false
+	#rareIcon3.visible = false
 
 func posicionarIconesRaridade(salas : Array[Vector2i]):
 	salaRara1 = salas[0]

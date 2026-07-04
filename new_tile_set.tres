@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bsagioj6ecrd3" path="res://assets/tilemap placeholder.png" id="1_p2fuk"]
 [ext_resource type="Texture2D" uid="uid://b5piqbyuvn5w" path="res://assets/cenarios/Grade Lado.png" id="2_2yonb"]
+[ext_resource type="Texture2D" uid="uid://cw2q6sclks6ux" path="res://assets/cenarios/Casa.png" id="3_5lopg"]
 [ext_resource type="Texture2D" uid="uid://dv168476n578s" path="res://assets/cenarios/GradeFrente.png" id="3_h5554"]
 [ext_resource type="Texture2D" uid="uid://8cjp846ua1w5" path="res://assets/cenarios/SpritePorto.png" id="4_5lopg"]
 [ext_resource type="Texture2D" uid="uid://qnpipq5vabcf" path="res://assets/cenarios/SpritesCasa(parte com madeira).png" id="5_o7gju"]
@@ -9,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://6pmu2punxccp" path="res://assets/cenarios/SpritesMercadoLIverParede.png" id="7_pnqjw"]
 [ext_resource type="Texture2D" uid="uid://brmxkll3y4dpr" path="res://assets/cenarios/SpritesRua.png" id="8_s8ds5"]
 [ext_resource type="Texture2D" uid="uid://y8woiiyef2yc" path="res://assets/SpritesMercadoLIverParede.png" id="9_2yonb"]
+[ext_resource type="Texture2D" uid="uid://kby7pqcaf8yi" path="res://assets/cenarios/TelhadoCasa.png" id="11_o7gju"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ye2r3"]
 texture = ExtResource("1_p2fuk")
@@ -19,6 +21,34 @@ texture = ExtResource("1_p2fuk")
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ru4jg"]
 texture = ExtResource("2_2yonb")
 0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yv8fe"]
+texture = ExtResource("3_5lopg")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.34820747, -8, 8, -8, 8, 8, 0.17410278, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(0.34820747, -8, 8, -8, 8, 8, 0.17410278, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5lopg"]
+texture = ExtResource("11_o7gju")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g3ygi"]
 texture = ExtResource("3_h5554")
@@ -94,6 +124,17 @@ texture = ExtResource("9_2yonb")
 1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -8)
 2:1/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pnqjw"]
+texture = ExtResource("11_o7gju")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
 [resource]
 physics_layer_0/collision_layer = 1
 physics_layer_0/collision_mask = 0
@@ -106,3 +147,6 @@ sources/5 = SubResource("TileSetAtlasSource_bj18p")
 sources/6 = SubResource("TileSetAtlasSource_0y111")
 sources/7 = SubResource("TileSetAtlasSource_nj6ga")
 sources/8 = SubResource("TileSetAtlasSource_h5554")
+sources/9 = SubResource("TileSetAtlasSource_pnqjw")
+sources/10 = SubResource("TileSetAtlasSource_yv8fe")
+sources/11 = SubResource("TileSetAtlasSource_5lopg")

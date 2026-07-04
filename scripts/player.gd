@@ -8,11 +8,14 @@ class_name Player
 @export var timerImunidade : Timer
 @export var gradeProdutos : GridContainer
 @export var hbox : HBoxContainer
+@export var descricao : Label
 
 var direcao : Vector2 = Vector2.ZERO
 var boomerangDisponivel : bool = true
 const PROJETIL_PLAYER = preload("uid://c5t7hnfexwugc")
 const PRODUTO_TENIS = preload("uid://cvnd1htea3goq")
+const PRODUTO_CAMISA = preload("uid://dp4ch2rj6fate")
+const PRODUTO_PIZZA = preload("uid://da0mak2ho48x7")
 
 var hitsParaPerderProduto : int = 5
 var hitsTomados : int = 0
@@ -142,7 +145,9 @@ func _process(_delta: float) -> void:
 		var projetilInstancia : Boomerang = PROJETIL_PLAYER.instantiate()
 		guardaProjetil.add_child(projetilInstancia)
 		projetilInstancia.corpoLancador = self
-		projetilInstancia.global_position = global_position + direcaoAtaque*projectileOffset
+		projetilInstancia.global_position = (global_position + 
+		direcaoAtaque*projectileOffset +
+		Vector2.UP* 28)
 		projetilInstancia.lancar(velocidadeProjetil, direcaoAtaque)
 		boomerangDisponivel = false
 		boneSprite.visible = false
@@ -156,8 +161,15 @@ func coletarProduto(tipo : Produtos):
 	match tipo:
 		Produtos.TENIS:
 			produto = PRODUTO_TENIS.instantiate()
+		Produtos.CAMISA:
+			produto = PRODUTO_CAMISA.instantiate()
+		Produtos.PIZZA:
+			produto = PRODUTO_PIZZA.instantiate()
 	gradeProdutos.add_child(produto)
 	produto.aplicarEfeito(self)
+	produto.get_child(0).conectarFuncoes(self)
+	#produto.get_child(0).mouseEntrou.connect(mudarDescricao)
+	#produto.get_child(0).mouse_exited.connect(tirarDescricao)
 	atualizarGrid()
 
 func derrotouBoss():
@@ -166,6 +178,12 @@ func derrotouBoss():
 	sprite.play("win")
 	await sprite.animation_finished
 	get_tree().call_deferred("change_scene_to_file", "res://cenas/menu.tscn")
+
+func mudarDescricao(desc : String):
+	descricao.text = desc
+
+func tirarDescricao():
+	descricao.text = ""
 
 func morrer():
 	morreu.emit()

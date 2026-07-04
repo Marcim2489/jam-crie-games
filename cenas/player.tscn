@@ -446,7 +446,7 @@ bg_color = Color(0.11, 0.11, 0.11, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kthid"]
 bg_color = Color(0.81, 0, 0, 1)
 
-[node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "boneSprite", "timerImunidade", "gradeProdutos", "hbox", "hurtbox", "guardaProjetil", "sprite", "timerDano") groups=["Player"]]
+[node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "boneSprite", "timerImunidade", "gradeProdutos", "hbox", "descricao", "hurtbox", "guardaProjetil", "sprite", "timerDano") groups=["Player"]]
 z_index = 2
 y_sort_enabled = true
 collision_layer = 2
@@ -458,6 +458,7 @@ boneSprite = NodePath("bone sprite")
 timerImunidade = NodePath("imunidade")
 gradeProdutos = NodePath("CanvasLayer/PAUSE MENU/GridContainer")
 hbox = NodePath("CanvasLayer/HBoxContainer")
+descricao = NodePath("CanvasLayer/PAUSE MENU/descricao")
 hurtbox = NodePath("hurtbox")
 guardaProjetil = NodePath("O")
 sprite = NodePath("AnimatedSprite2D")
@@ -519,10 +520,12 @@ source = NodePath("../../hurtbox")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/PAUSE MENU" unique_id=1339594509]
 layout_mode = 0
-offset_top = 164.0
-offset_right = 40.0
-offset_bottom = 204.0
-columns = 5
+offset_left = -13.0
+offset_top = 190.0
+offset_right = 576.0
+offset_bottom = 445.0
+theme_override_constants/h_separation = 16
+columns = 7
 
 [node name="Panel" type="Panel" parent="CanvasLayer/PAUSE MENU" unique_id=392722175]
 z_index = -1
@@ -532,6 +535,14 @@ offset_top = -113.0
 offset_right = 841.0
 offset_bottom = 664.0
 mouse_filter = 2
+
+[node name="descricao" type="Label" parent="CanvasLayer/PAUSE MENU" unique_id=847222444]
+layout_mode = 0
+offset_left = -87.0
+offset_top = 486.0
+offset_right = 617.0
+offset_bottom = 617.0
+theme_override_font_sizes/font_size = 48
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=909722016]
 offset_left = 22.0

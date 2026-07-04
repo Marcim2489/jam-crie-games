@@ -24,11 +24,12 @@ func lancar(velocidade: int, direcao : Vector2):
 	look_at(global_position + 10*direcao)
 	corpoLancador.morreu.connect(sumir)
 
-func bodyEntered(body: Node2D):
-	if body == corpoLancador and voltarTimer.is_stopped():
-		#if body is Player:
-			#body.boomerangVoltou()
-		finalizarVida()
+func bodyEntered(_body: Node2D):
+	#if body == corpoLancador and voltarTimer.is_stopped():
+		##if body is Player:
+			##body.boomerangVoltou()
+		#finalizarVida()
+	pass
 
 func sumir():
 	call_deferred("queue_free")
@@ -55,8 +56,10 @@ func _process(delta: float) -> void:
 				velocity = Vector2.ZERO
 				comecouVolta = true
 		else:
-			var direcao : Vector2 = (corpoLancador.global_position - 
+			var direcao : Vector2 = (corpoLancador.global_position+Vector2.UP*28 - 
 			global_position).normalized()
 			velocity = velocity.move_toward(direcao * velocidadeMov, delta* desaceleracao)
 			velocidadeMov+=aceleracao
+			if (corpoLancador.global_position+Vector2.UP*28).distance_to(global_position) <= 6:
+				finalizarVida()
 	move_and_slide()

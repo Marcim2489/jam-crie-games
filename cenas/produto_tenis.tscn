@@ -2,8 +2,24 @@
 
 [ext_resource type="Script" uid="uid://d0maow8d0i6km" path="res://scripts/produto_tenis.gd" id="1_behvf"]
 [ext_resource type="Texture2D" uid="uid://d0ln7maeyit2k" path="res://assets/produtos/TenisJordan.png" id="1_y2h64"]
+[ext_resource type="Script" uid="uid://bvw8jcpoqjy4y" path="res://scripts/produto_button.gd" id="2_5y2nu"]
 
-[node name="produto" type="Sprite2D" unique_id=409620553]
+[node name="produto" type="Control" unique_id=2061231273]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_behvf")
+
+[node name="Button" type="Button" parent="." unique_id=304094175]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("2_5y2nu")
+descricao = "Aumenta a velocidade"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1531640271]
 scale = Vector2(4, 4)
 texture = ExtResource("1_y2h64")
-script = ExtResource("1_behvf")

@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://da0mak2ho48x7"]
+
+[ext_resource type="Script" uid="uid://bia6aarsrfooq" path="res://scripts/produto_pizza.gd" id="1_21tt3"]
+[ext_resource type="Script" uid="uid://bvw8jcpoqjy4y" path="res://scripts/produto_button.gd" id="2_1qdje"]
+[ext_resource type="Texture2D" uid="uid://wfser0qanole" path="res://assets/produtos/Pizza.png" id="2_21tt3"]
+
+[node name="produto" type="Control" unique_id=2061231273]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_21tt3")
+
+[node name="Button" type="Button" parent="." unique_id=1750965549]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 0
+offset_left = -32.0
+offset_top = -32.0
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("2_1qdje")
+descricao = "Aumenta velocidade do projetil"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1531640271]
+scale = Vector2(4, 4)
+texture = ExtResource("2_21tt3")
