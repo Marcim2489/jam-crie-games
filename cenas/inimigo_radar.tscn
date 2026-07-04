@@ -158,6 +158,8 @@ bg_color = Color(0, 0, 0, 0)
 bg_color = Color(0.77, 0, 0, 1)
 
 [node name="inimigo radar" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("animSprite", "cooldownAtaque", "hurtbox", "guardaProjetil")]
+z_index = 1
+y_sort_enabled = true
 collision_layer = 4
 collision_mask = 0
 script = ExtResource("1_y03cf")
@@ -174,7 +176,6 @@ autoplay = "costas"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=430073565]
 shape = SubResource("RectangleShape2D_hjbd6")
-disabled = true
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=2025863822]
 collision_layer = 0
@@ -183,7 +184,7 @@ script = ExtResource("8_k20lt")
 vidaMaxima = 30
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1024004097]
-position = Vector2(-6, -5)
+position = Vector2(-1, 1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_7m0xs")
 
@@ -208,11 +209,13 @@ script = ExtResource("9_g1rwi")
 position = Vector2(-1, 1)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_dcq82")
+disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox" unique_id=844227269]
 position = Vector2(4, -2)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_hjbd6")
+disabled = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1295056947 node_paths=PackedStringArray("source")]
 offset_left = -11.0

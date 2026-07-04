@@ -4,6 +4,7 @@ class_name EnemyContainer
 signal todosDerrotados
 
 func _ready() -> void:
+	y_sort_enabled = true
 	for inimigo : Entidade in get_children():
 		inimigo.morreu.connect(verificarInimigos)
 

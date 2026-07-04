@@ -322,7 +322,10 @@ bg_color = Color(0.11, 0.11, 0.11, 1)
 bg_color = Color(0.81, 0, 0, 1)
 
 [node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "sprite", "boneSprite", "timerDano", "timerImunidade", "hurtbox", "guardaProjetil") groups=["Player"]]
+z_index = 1
+y_sort_enabled = true
 collision_layer = 2
+collision_mask = 5
 script = ExtResource("1_unwft")
 ataqueCooldown = NodePath("ataque cooldown")
 velocidadeProjetil = 250
@@ -334,21 +337,20 @@ hurtbox = NodePath("hurtbox")
 guardaProjetil = NodePath("O")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=618093900]
-z_index = 1
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_wx7i4")
 animation = &"idle back"
 autoplay = "idle front"
+offset = Vector2(0, -12)
 
 [node name="bone sprite" type="AnimatedSprite2D" parent="." unique_id=716962816]
-z_index = 1
-y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_jcky1")
 animation = &"lado"
 autoplay = "frente"
+offset = Vector2(0, -12)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1397998837]
-position = Vector2(0, 9)
+position = Vector2(0, -3)
 shape = SubResource("RectangleShape2D_mp0j6")
 
 [node name="O" type="Node" parent="." unique_id=2116531236]
@@ -361,7 +363,7 @@ vidaMaxima = 50
 imunidadeTimer = NodePath("../imunidade")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=904236176]
-position = Vector2(0, 7.5)
+position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_wx7i4")
 
 [node name="ataque cooldown" type="Timer" parent="." unique_id=847514457]

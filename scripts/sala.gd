@@ -15,6 +15,7 @@ signal concluida
 
 func _ready() -> void:
 	SalaManager.entrouNaSala.connect(aoMudarSala)
+	y_sort_enabled = true
 
 func aoMudarSala(coord : Vector2i):
 	if coord != coordenada:
