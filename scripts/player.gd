@@ -6,17 +6,62 @@ class_name Player
 @export var projectileOffset : int = 10
 @export var boneSprite : AnimatedSprite2D
 @export var timerImunidade : Timer
+@export var gradeProdutos : GridContainer
+@export var hbox : HBoxContainer
 
 var direcao : Vector2 = Vector2.ZERO
 var boomerangDisponivel : bool = true
 const PROJETIL_PLAYER = preload("uid://c5t7hnfexwugc")
+const PRODUTO_TENIS = preload("uid://cvnd1htea3goq")
+
+var hitsParaPerderProduto : int = 5
+var hitsTomados : int = 0
+
+var ganhouJogo : bool = false
+
+enum Produtos {
+	TENIS,
+	PIZZA,
+	CAMISA,
+	GARRAFA
+}
 
 func _ready() -> void:
 	if(hurtbox != null):
 		hurtbox.morreu.connect(morrer)
 		hurtbox.recebeuDano.connect(aoReceberDano)
+	atualizarGrid()
 
+func perderProduto():
+	var produto : Produto = gradeProdutos.get_child(0)
+	produto.retirarEfeito(self)
+	produto.queue_free()
+	if gradeProdutos.get_children().size() <= 1:
+		hbox.visible = false
+
+func atualizarGrid():
+	if gradeProdutos.get_children().size() <= 0:
+		hbox.visible = false
+		return
+	hbox.visible = true
+	var i : int = 0
+	while i < hbox.get_children().size():
+		if i < 5- hitsTomados:
+			hbox.get_child(i).color = Color.RED
+		else: 
+			hbox.get_child(i).color = Color.GRAY
+		i+=1
 func aoReceberDano():
+	#print(gradeProdutos.get_children().size())
+	if gradeProdutos.get_children().size() >=1:
+		hitsTomados+=1
+		if hitsTomados >= hitsParaPerderProduto:
+			hitsTomados = 0
+			perderProduto()
+		else:
+			atualizarGrid()
+	else:
+		atualizarGrid()
 	sprite.self_modulate.g = 0
 	sprite.self_modulate.b = 0
 	sprite.self_modulate.r = 0.7
@@ -33,6 +78,8 @@ func aoReceberDano():
 	#sprite.self_modulate.a = 1
 
 func _process(_delta: float) -> void:
+	if ganhouJogo:
+		return
 	var direcaoAtual : Vector2 = Vector2.ZERO
 	if(Input.is_action_pressed("ui_right")):
 		direcaoAtual.x +=1
@@ -104,8 +151,28 @@ func boomerangVoltou():
 	boomerangDisponivel = true
 	boneSprite.visible = true
 
+func coletarProduto(tipo : Produtos):
+	var produto : Produto
+	match tipo:
+		Produtos.TENIS:
+			produto = PRODUTO_TENIS.instantiate()
+	gradeProdutos.add_child(produto)
+	produto.aplicarEfeito(self)
+	atualizarGrid()
+
+func derrotouBoss():
+	ganhouJogo = true
+	velocity = Vector2.ZERO
+	sprite.play("win")
+	await sprite.animation_finished
+	get_tree().call_deferred("change_scene_to_file", "res://cenas/menu.tscn")
 
 func morrer():
 	morreu.emit()
+	boneSprite.visible = false
+	hurtbox.set_deferred("monitoring", false)
+	ganhouJogo = true
+	velocity = Vector2.ZERO
+	sprite.play("die")
+	await sprite.animation_finished
 	get_tree().call_deferred("change_scene_to_file", "res://cenas/game_over_screen.tscn")
-	#get_tree().change_scene_to_file("res://cenas/game_over_screen.tscn")

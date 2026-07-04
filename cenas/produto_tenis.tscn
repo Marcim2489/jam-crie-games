@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cvnd1htea3goq"]
+
+[ext_resource type="Script" uid="uid://d0maow8d0i6km" path="res://scripts/produto_tenis.gd" id="1_behvf"]
+[ext_resource type="Texture2D" uid="uid://d0ln7maeyit2k" path="res://assets/produtos/TenisJordan.png" id="1_y2h64"]
+
+[node name="produto" type="Sprite2D" unique_id=409620553]
+scale = Vector2(4, 4)
+texture = ExtResource("1_y2h64")
+script = ExtResource("1_behvf")

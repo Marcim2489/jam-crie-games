@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://b5xtub1q7iims" path="res://scripts/player.gd" id="1_unwft"]
 [ext_resource type="Texture2D" uid="uid://ckxieqi03fcb2" path="res://assets/JuninCarecaIdl.png" id="2_8v4ht"]
 [ext_resource type="Texture2D" uid="uid://cplecr8tme0ng" path="res://assets/JuninCarecaCostasIdle.png" id="2_mp0j6"]
+[ext_resource type="Texture2D" uid="uid://ff8ees0qa6p2" path="res://assets/JuninCarecaMorrido.png" id="2_s1iqd"]
 [ext_resource type="Texture2D" uid="uid://c77md62712dvo" path="res://assets/JuninCarecaLadoIdle.png" id="3_4y2i1"]
 [ext_resource type="Texture2D" uid="uid://cuwy4t1cj52yf" path="res://assets/JuninCarecaWalk.png" id="3_8v4ht"]
 [ext_resource type="Script" uid="uid://bawd3nipgriib" path="res://scripts/hurtbox.gd" id="3_kthid"]
@@ -10,9 +11,42 @@
 [ext_resource type="Texture2D" uid="uid://dbc720uyse6qc" path="res://assets/JuninCarecaCostasWalk.png" id="5_8bq56"]
 [ext_resource type="Texture2D" uid="uid://05gcp1vvt3cl" path="res://assets/JuninCarecaLadoWalk.png" id="7_tckef"]
 [ext_resource type="Texture2D" uid="uid://do5dcx8rgfc88" path="res://assets/BoneFixoCostas.png" id="8_8bq56"]
+[ext_resource type="Texture2D" uid="uid://c07xlecwxx7ie" path="res://assets/JuninCarecaWinner.png" id="8_vtxll"]
 [ext_resource type="Texture2D" uid="uid://d4m1p7mqca7hs" path="res://assets/BoneFixoLadoEsq.png" id="9_ym2kn"]
 [ext_resource type="Texture2D" uid="uid://cjd07eh3fhogg" path="res://assets/BoneFixoLadoArrumado.png" id="10_tckef"]
 [ext_resource type="PackedScene" uid="uid://besef31ukj3dy" path="res://cenas/pause_menu.tscn" id="13_ym2kn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xsgua"]
+atlas = ExtResource("2_s1iqd")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p71t4"]
+atlas = ExtResource("2_s1iqd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xkpwk"]
+atlas = ExtResource("2_s1iqd")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oepnj"]
+atlas = ExtResource("2_s1iqd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_taurc"]
+atlas = ExtResource("2_s1iqd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlos6"]
+atlas = ExtResource("2_s1iqd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xdbn"]
+atlas = ExtResource("2_s1iqd")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g4wxp"]
+atlas = ExtResource("2_s1iqd")
+region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u4uu3"]
 atlas = ExtResource("2_mp0j6")
@@ -142,8 +176,69 @@ region = Rect2(0, 64, 32, 32)
 atlas = ExtResource("7_tckef")
 region = Rect2(32, 64, 32, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_h2dhk"]
+atlas = ExtResource("8_vtxll")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86jcb"]
+atlas = ExtResource("8_vtxll")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0lco"]
+atlas = ExtResource("8_vtxll")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxc2q"]
+atlas = ExtResource("8_vtxll")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ggb57"]
+atlas = ExtResource("8_vtxll")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jpnbx"]
+atlas = ExtResource("8_vtxll")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xlft3"]
+atlas = ExtResource("8_vtxll")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gpoab"]
+atlas = ExtResource("8_vtxll")
+region = Rect2(32, 32, 32, 32)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_wx7i4"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xsgua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p71t4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xkpwk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oepnj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_taurc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlos6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5xdbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g4wxp")
+}],
+"loop": 0,
+"name": &"die",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u4uu3")
@@ -269,6 +364,35 @@ animations = [{
 "loop": 1,
 "name": &"walk side",
 "speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h2dhk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86jcb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0lco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxc2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ggb57")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jpnbx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xlft3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gpoab")
+}],
+"loop": 0,
+"name": &"win",
+"speed": 7.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j4uu1"]
@@ -322,7 +446,7 @@ bg_color = Color(0.11, 0.11, 0.11, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kthid"]
 bg_color = Color(0.81, 0, 0, 1)
 
-[node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "boneSprite", "timerImunidade", "hurtbox", "guardaProjetil", "sprite", "timerDano") groups=["Player"]]
+[node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "boneSprite", "timerImunidade", "gradeProdutos", "hbox", "hurtbox", "guardaProjetil", "sprite", "timerDano") groups=["Player"]]
 z_index = 2
 y_sort_enabled = true
 collision_layer = 2
@@ -332,6 +456,8 @@ ataqueCooldown = NodePath("ataque cooldown")
 velocidadeProjetil = 260
 boneSprite = NodePath("bone sprite")
 timerImunidade = NodePath("imunidade")
+gradeProdutos = NodePath("CanvasLayer/PAUSE MENU/GridContainer")
+hbox = NodePath("CanvasLayer/HBoxContainer")
 hurtbox = NodePath("hurtbox")
 guardaProjetil = NodePath("O")
 sprite = NodePath("AnimatedSprite2D")
@@ -340,7 +466,7 @@ timerDano = NodePath("daninho")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=618093900]
 y_sort_enabled = true
 sprite_frames = SubResource("SpriteFrames_wx7i4")
-animation = &"idle back"
+animation = &"die"
 autoplay = "idle front"
 offset = Vector2(0, -12)
 
@@ -390,6 +516,53 @@ script = ExtResource("4_xojfc")
 source = NodePath("../../hurtbox")
 
 [node name="PAUSE MENU" parent="CanvasLayer" unique_id=361668171 instance=ExtResource("13_ym2kn")]
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/PAUSE MENU" unique_id=1339594509]
+layout_mode = 0
+offset_top = 164.0
+offset_right = 40.0
+offset_bottom = 204.0
+columns = 5
+
+[node name="Panel" type="Panel" parent="CanvasLayer/PAUSE MENU" unique_id=392722175]
+z_index = -1
+layout_mode = 0
+offset_left = -499.0
+offset_top = -113.0
+offset_right = 841.0
+offset_bottom = 664.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=909722016]
+offset_left = 22.0
+offset_top = 38.0
+offset_right = 138.0
+offset_bottom = 48.0
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/HBoxContainer" unique_id=1329857008]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer/HBoxContainer" unique_id=1984539949]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer/HBoxContainer" unique_id=215792169]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect4" type="ColorRect" parent="CanvasLayer/HBoxContainer" unique_id=85223518]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="CanvasLayer/HBoxContainer" unique_id=2063237513]
+custom_minimum_size = Vector2(10, 10)
+layout_mode = 2
+color = Color(1, 0, 0, 1)
 
 [node name="daninho" type="Timer" parent="." unique_id=1920956024]
 wait_time = 0.08

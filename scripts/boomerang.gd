@@ -22,12 +22,16 @@ func lancar(velocidade: int, direcao : Vector2):
 	velocity = velocidade * direcao
 	velocidadeMov = velocidade
 	look_at(global_position + 10*direcao)
+	corpoLancador.morreu.connect(sumir)
 
 func bodyEntered(body: Node2D):
 	if body == corpoLancador and voltarTimer.is_stopped():
 		#if body is Player:
 			#body.boomerangVoltou()
 		finalizarVida()
+
+func sumir():
+	call_deferred("queue_free")
 
 func finalizarVida():
 	if corpoLancador is Player:

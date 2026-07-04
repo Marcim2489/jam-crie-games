@@ -85,4 +85,5 @@ func morrer():
 	hurtbox.set_deferred("monitoring", false)
 	hurtbox.set_deferred("monitorable", false)
 	guardaProjetil.call_deferred("queue_free")
+	player.derrotouBoss()
 	morreu.emit()
