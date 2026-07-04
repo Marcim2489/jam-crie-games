@@ -2,5 +2,19 @@
 
 [ext_resource type="Script" uid="uid://bqmkyf4v8qwtu" path="res://scripts/sala_manager.gd" id="1_sj0he"]
 
-[node name="SalaManager" type="Node" unique_id=691834242]
+[node name="SalaManager" type="Node" unique_id=691834242 node_paths=PackedStringArray("transicao")]
+process_mode = 3
 script = ExtResource("1_sj0he")
+transicao = NodePath("CanvasLayer/ColorRect")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=129526387]
+layer = 3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=214442635]
+self_modulate = Color(1, 1, 1, 0)
+z_index = 4096
+offset_left = -121.0
+offset_top = -87.0
+offset_right = 1403.0
+offset_bottom = 821.0
+color = Color(0, 0, 0, 1)

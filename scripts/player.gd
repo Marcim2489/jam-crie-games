@@ -4,6 +4,9 @@ class_name Player
 @export var ataqueCooldown : Timer
 @export var velocidadeProjetil : int = 180
 @export var projectileOffset : int = 10
+@export var sprite : AnimatedSprite2D
+@export var boneSprite : AnimatedSprite2D
+
 var direcao : Vector2 = Vector2.ZERO
 var boomerangDisponivel : bool = true
 #const PROJETIL_PLAYER = preload("uid://dyofvx1o31s1q")
@@ -22,6 +25,10 @@ func _process(_delta: float) -> void:
 	direcao = direcao.normalized()
 	velocity = velocidadeMovimento * direcao
 	move_and_slide()
+	if direcao == Vector2.ZERO and sprite.animation != "idle":
+		sprite.play("idle")
+	elif direcao != Vector2.ZERO and sprite.animation != "walk":
+		sprite.play("walk")
 	#if Input.is_action_pressed("ataque") and ataqueCooldown.is_stopped():
 		#var direcaoAtaque : Vector2 = (get_global_mouse_position() - global_position).normalized()
 		#var projetilInstancia : Projetil = PROJETIL_PLAYER.instantiate()
@@ -37,6 +44,8 @@ func _process(_delta: float) -> void:
 		projetilInstancia.global_position = global_position + direcaoAtaque*projectileOffset
 		projetilInstancia.lancar(velocidadeProjetil, direcaoAtaque)
 		boomerangDisponivel = false
+		boneSprite.visible = false
 
 func boomerangVoltou():
 	boomerangDisponivel = true
+	boneSprite.visible = true

@@ -2,10 +2,49 @@
 
 [ext_resource type="Script" uid="uid://dw02q7wtanupu" path="res://scripts/boomerang.gd" id="1_luaxi"]
 [ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="2_jcky1"]
+[ext_resource type="Texture2D" uid="uid://c2vjyan6blquf" path="res://assets/Bone.png" id="3_jcky1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wx7i4"]
-radius = 5.5
-height = 11.0
+radius = 8.0
+height = 16.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dthrb"]
+radius = 6.0
+height = 18.0
+
+[sub_resource type="Animation" id="Animation_ibhcu"]
+resource_name = "girar"
+length = 0.26666668
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hitbox:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666667, 0.13333334, 0.19999999),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 1.5707963267948966, 3.141592653589793, 4.71238898038469]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_opo4c"]
+_data = {
+&"girar": SubResource("Animation_ibhcu")
+}
 
 [node name="boomerang" type="CharacterBody2D" unique_id=1372900184 node_paths=PackedStringArray("voltarTimer", "lifeTimer", "detectorCenario", "hitbox")]
 script = ExtResource("1_luaxi")
@@ -16,14 +55,16 @@ lifeTimer = NodePath("lifetimer")
 detectorCenario = NodePath("detector")
 hitbox = NodePath("hitbox")
 
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1323981756]
+rotation = 3.1415927
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("3_jcky1")
+offset = Vector2(0, -2)
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004631311]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_wx7i4")
 disabled = true
-
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=593141703]
-color = Color(1, 0, 0, 1)
-polygon = PackedVector2Array(4, -4, 6, 0, 4, 4, 0, 6, -4, 4, -6, 0, -4, -4, 0, -6)
 
 [node name="boomerangTimer" type="Timer" parent="." unique_id=293601230]
 wait_time = 0.33
@@ -44,6 +85,7 @@ rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_wx7i4")
 
 [node name="hitbox" type="CharacterBody2D" parent="." unique_id=433768110]
+rotation = 3.1415927
 collision_layer = 8
 collision_mask = 0
 script = ExtResource("2_jcky1")
@@ -51,3 +93,11 @@ script = ExtResource("2_jcky1")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=671292788]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_wx7i4")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="hitbox" unique_id=837177547]
+position = Vector2(0, -4)
+shape = SubResource("CapsuleShape2D_dthrb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1917482667]
+libraries/ = SubResource("AnimationLibrary_opo4c")
+autoplay = &"girar"
