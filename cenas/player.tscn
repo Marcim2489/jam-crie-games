@@ -23,15 +23,20 @@ shape = SubResource("RectangleShape2D_wx7i4")
 
 [node name="O" type="Node" parent="." unique_id=2116531236]
 
-[node name="hurtbox" type="Area2D" parent="." unique_id=1430875312]
+[node name="hurtbox" type="Area2D" parent="." unique_id=1430875312 node_paths=PackedStringArray("imunidadeTimer")]
 collision_layer = 0
 collision_mask = 16
 script = ExtResource("3_kthid")
-vidaMaxima = 20
+vidaMaxima = 50
+imunidadeTimer = NodePath("../imunidade")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=904236176]
 shape = SubResource("RectangleShape2D_wx7i4")
 
 [node name="ataque cooldown" type="Timer" parent="." unique_id=847514457]
 wait_time = 0.6
+one_shot = true
+
+[node name="imunidade" type="Timer" parent="." unique_id=1038680018]
+wait_time = 0.7
 one_shot = true

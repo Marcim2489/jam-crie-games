@@ -53,7 +53,7 @@ player = NodePath("player")
 minimap = NodePath("CanvasLayer/minimap")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1355454387]
-zoom = Vector2(2, 2)
+zoom = Vector2(3, 3)
 script = ExtResource("2_t4ukd")
 
 [node name="player" parent="." unique_id=175035773 instance=ExtResource("3_4fhxt")]
