@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dyofvx1o31s1q"]
+
+[ext_resource type="Script" uid="uid://cgk0bme677wjj" path="res://scripts/projetil.gd" id="1_yyet0"]
+[ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="2_iibh6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wx7i4"]
+radius = 6.0
+
+[node name="projetil player" type="CharacterBody2D" unique_id=1372900184 node_paths=PackedStringArray("lifeTimer", "detectorCenario", "hitbox")]
+script = ExtResource("1_yyet0")
+lifeTimer = NodePath("lifeTimer")
+detectorCenario = NodePath("detectorcenario")
+hitbox = NodePath("hitbox")
+penetracao = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004631311]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wx7i4")
+disabled = true
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=593141703]
+color = Color(1, 0, 0, 1)
+polygon = PackedVector2Array(0, -6, 11, -6, 15, 0, 11, 6, -11, 6, -15, 0, -11, -6)
+
+[node name="lifeTimer" type="Timer" parent="." unique_id=1416465383]
+wait_time = 3.0
+one_shot = true
+
+[node name="detectorcenario" type="Area2D" parent="." unique_id=1000655803]
+collision_layer = 0
+collision_mask = 33
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="detectorcenario" unique_id=1818323868]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wx7i4")
+
+[node name="hitbox" type="CharacterBody2D" parent="." unique_id=433768110]
+collision_layer = 8
+collision_mask = 0
+script = ExtResource("2_iibh6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=671292788]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wx7i4")

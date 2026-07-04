@@ -30,6 +30,10 @@ var salasUsadas : Array[Vector2i]
 
 var primeiraSala : Vector2i = Vector2i(0,0)
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("resetar"):
+		get_tree().reload_current_scene()
+
 func _ready() -> void:
 	var x : int = 0
 	var y : int = 0
@@ -49,8 +53,8 @@ func _ready() -> void:
 		var instanciaSala : Node2D = load(verificarAdjacencia(sala)).instantiate()
 		add_child(instanciaSala)
 		instanciaSala.global_position = Vector2i(
-			sala.x*16*18*2,
-			sala.y*16*12*2, 
+			sala.x*SalaManager.tamanhoTile*SalaManager.tilesHorizontal*SalaManager.separacaoEntreSalas,
+			sala.y*SalaManager.tamanhoTile*SalaManager.tilesVertical*SalaManager.separacaoEntreSalas, 
 		)
 	SalaManager.setarSala(primeiraSala, player)
 	#player.global_position = Vector2i(

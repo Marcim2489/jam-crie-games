@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bsagioj6ecrd3" path="res://assets/tilemap placeholder.png" id="1_hayrx"]
 [ext_resource type="PackedScene" uid="uid://ba6r1jaeaignu" path="res://cenas/porta.tscn" id="2_nx312"]
+[ext_resource type="PackedScene" uid="uid://dxhdi3nemo5jd" path="res://cenas/inimigo.tscn" id="3_8afdq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ye2r3"]
 texture = ExtResource("1_hayrx")
@@ -23,3 +24,12 @@ tile_set = SubResource("TileSet_wx7i4")
 [node name="porta" parent="." unique_id=1706015082 instance=ExtResource("2_nx312")]
 position = Vector2(0, 104)
 direcao = 1
+
+[node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("3_8afdq")]
+position = Vector2(-69, -22)
+
+[node name="inimigo2" parent="." unique_id=1985709723 instance=ExtResource("3_8afdq")]
+position = Vector2(-47, 15)
+
+[node name="inimigo3" parent="." unique_id=414380765 instance=ExtResource("3_8afdq")]
+position = Vector2(35, -16)

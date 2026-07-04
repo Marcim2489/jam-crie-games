@@ -2,12 +2,16 @@
 
 [ext_resource type="Texture2D" uid="uid://njubn7lqiskg" path="res://assets/icon.svg" id="1_8or6t"]
 [ext_resource type="Script" uid="uid://b5xtub1q7iims" path="res://scripts/player.gd" id="1_unwft"]
+[ext_resource type="Script" uid="uid://bawd3nipgriib" path="res://scripts/hurtbox.gd" id="3_kthid"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wx7i4"]
 
-[node name="player" type="CharacterBody2D" unique_id=175035773]
+[node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "hurtbox", "guardaProjetil")]
 collision_layer = 2
 script = ExtResource("1_unwft")
+ataqueCooldown = NodePath("ataque cooldown")
+hurtbox = NodePath("hurtbox")
+guardaProjetil = NodePath("O")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1868778543]
 z_index = 1
@@ -16,3 +20,18 @@ texture = ExtResource("1_8or6t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1397998837]
 shape = SubResource("RectangleShape2D_wx7i4")
+
+[node name="O" type="Node" parent="." unique_id=2116531236]
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=1430875312]
+collision_layer = 0
+collision_mask = 16
+script = ExtResource("3_kthid")
+vidaMaxima = 20
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=904236176]
+shape = SubResource("RectangleShape2D_wx7i4")
+
+[node name="ataque cooldown" type="Timer" parent="." unique_id=847514457]
+wait_time = 0.6
+one_shot = true

@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://dxhdi3nemo5jd"]
+
+[ext_resource type="Texture2D" uid="uid://njubn7lqiskg" path="res://assets/icon.svg" id="1_1nma5"]
+[ext_resource type="Script" uid="uid://f1cgsdkjwa8j" path="res://scripts/entidade.gd" id="1_l8wry"]
+[ext_resource type="Script" uid="uid://bawd3nipgriib" path="res://scripts/hurtbox.gd" id="3_g2cae"]
+[ext_resource type="Script" uid="uid://c6yoph065dhpl" path="res://scripts/hitbox.gd" id="4_n5rp5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx7i4"]
+
+[node name="inimigo" type="CharacterBody2D" unique_id=1516495147 node_paths=PackedStringArray("hurtbox", "guardaProjetil")]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_l8wry")
+hurtbox = NodePath("hurtbox")
+guardaProjetil = NodePath("Node")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2049685731]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(0.15625, 0.15625)
+texture = ExtResource("1_1nma5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=430073565]
+shape = SubResource("RectangleShape2D_wx7i4")
+
+[node name="hurtbox" type="Area2D" parent="." unique_id=2025863822]
+collision_layer = 0
+collision_mask = 8
+script = ExtResource("3_g2cae")
+vidaMaxima = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=1986640351]
+shape = SubResource("RectangleShape2D_wx7i4")
+
+[node name="Node" type="Node" parent="." unique_id=673895474]
+
+[node name="hitbox" type="CharacterBody2D" parent="." unique_id=1328480869]
+collision_layer = 16
+collision_mask = 0
+script = ExtResource("4_n5rp5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox" unique_id=1440946783]
+shape = SubResource("RectangleShape2D_wx7i4")

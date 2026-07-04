@@ -1,8 +1,12 @@
-extends CharacterBody2D
+extends Entidade
 class_name Player
 
-@export var velocidade : int = 130
+@export var ataqueCooldown : Timer
+@export var velocidadeProjetil : int = 180
+@export var projectileOffset : int = 10
 var direcao : Vector2 = Vector2.ZERO
+
+const PROJETIL_PLAYER = preload("uid://dyofvx1o31s1q")
 
 func _process(_delta: float) -> void:
 	direcao = Vector2.ZERO
@@ -15,6 +19,13 @@ func _process(_delta: float) -> void:
 	if(Input.is_action_pressed("ui_up")):
 		direcao.y -=1
 	direcao = direcao.normalized()
-	velocity = velocidade * direcao
+	velocity = velocidadeMovimento * direcao
 	move_and_slide()
+	if Input.is_action_pressed("ataque") and ataqueCooldown.is_stopped():
+		var direcaoAtaque : Vector2 = (get_global_mouse_position() - global_position).normalized()
+		var projetilInstancia : Projetil = PROJETIL_PLAYER.instantiate()
+		guardaProjetil.add_child(projetilInstancia)
+		projetilInstancia.global_position = global_position + direcaoAtaque*projectileOffset
+		projetilInstancia.lancar(velocidadeProjetil, direcaoAtaque)
+		ataqueCooldown.start()
 	
