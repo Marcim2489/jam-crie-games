@@ -97,7 +97,7 @@ var ultimaSala : Vector2i
 		#get_tree().reload_current_scene()
 
 func _ready() -> void:
-	MusicPlayer.playMusic(MusicPlayer.VIOLA_MINHA_VIOLA)
+	MusicPlayer.playMusic(MusicPlayer.JORNADA_DO_CARTEIRO)
 	var x : int = 0
 	var y : int = 0
 	while(x < colunas):
