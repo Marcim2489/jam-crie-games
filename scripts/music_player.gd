@@ -5,7 +5,7 @@ const PIANO_MEU_PIANO = preload("uid://clhxukgc4emob")
 const JORNADA_DO_CARTEIRO = preload("uid://u86ixtrm0hjr")
 
 func playMusic(music : AudioStream, volume : float = 1):
-	volume_linear = volume
+	volume_linear = volume/6.7
 	if music == stream:
 		return
 	stream = music
