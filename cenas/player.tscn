@@ -441,10 +441,10 @@ size = Vector2(16, 14)
 size = Vector2(14, 15)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wx7i4"]
-bg_color = Color(0.11, 0.11, 0.11, 1)
+bg_color = Color(0.79607844, 0.10980392, 0.10980392, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kthid"]
-bg_color = Color(0.81, 0, 0, 1)
+bg_color = Color(0, 0.95686275, 0, 1)
 
 [node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "boneSprite", "timerImunidade", "gradeProdutos", "hbox", "descricao", "hurtbox", "guardaProjetil", "sprite", "timerDano") groups=["Player"]]
 z_index = 2
@@ -520,10 +520,10 @@ source = NodePath("../../hurtbox")
 
 [node name="GridContainer" type="GridContainer" parent="CanvasLayer/PAUSE MENU" unique_id=1339594509]
 layout_mode = 0
-offset_left = -13.0
-offset_top = 190.0
-offset_right = 576.0
-offset_bottom = 445.0
+offset_left = 104.0
+offset_top = 201.0
+offset_right = 655.0
+offset_bottom = 442.0
 theme_override_constants/h_separation = 16
 columns = 7
 
@@ -537,12 +537,14 @@ offset_bottom = 664.0
 mouse_filter = 2
 
 [node name="descricao" type="Label" parent="CanvasLayer/PAUSE MENU" unique_id=847222444]
+custom_minimum_size = Vector2(1, 1)
 layout_mode = 0
-offset_left = -87.0
+offset_left = 85.0
 offset_top = 486.0
-offset_right = 617.0
+offset_right = 725.0
 offset_bottom = 617.0
 theme_override_font_sizes/font_size = 48
+autowrap_mode = 3
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer" unique_id=909722016]
 offset_left = 22.0

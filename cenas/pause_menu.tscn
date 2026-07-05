@@ -1,6 +1,46 @@
 [gd_scene format=3 uid="uid://besef31ukj3dy"]
 
 [ext_resource type="Script" uid="uid://b7necehowv7qm" path="res://scripts/pause_menu.gd" id="1_jsi4g"]
+[ext_resource type="Texture2D" uid="uid://32xfafq0y0a5" path="res://assets/hud/Pause-removebg-preview.png" id="2_m0p7e"]
+[ext_resource type="Texture2D" uid="uid://duwf3msaqk2i2" path="res://assets/hud/Resume-removebg-preview.png" id="2_ux4mk"]
+[ext_resource type="Texture2D" uid="uid://cg1520p6qr16r" path="res://assets/hud/Restart-removebg-preview.png" id="3_hl2u7"]
+[ext_resource type="Texture2D" uid="uid://dx8xol5exysft" path="res://assets/hud/Menu-removebg-preview.png" id="4_hl2u7"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qvcyk"]
+load_path = "res://.godot/imported/BotaoGeral.png-f6c920a538a72c94e0fa514659bf8c6b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_sx7qs"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8x2wp"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+modulate_color = Color(0.7, 0.7, 0.7, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_5pfmb"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+modulate_color = Color(0.7, 0.7, 0.7, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6po1l"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uid7b"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+modulate_color = Color(0.7, 0.7, 0.7, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_61vbe"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+modulate_color = Color(0.7, 0.7, 0.7, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0quve"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rw612"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+modulate_color = Color(0.7, 0.7, 0.7, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ob6ac"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+modulate_color = Color(0.7, 0.7, 0.7, 1)
 
 [node name="PAUSE MENU" type="Label" unique_id=361668171]
 process_mode = 3
@@ -11,31 +51,58 @@ offset_bottom = 220.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 18
 theme_override_font_sizes/font_size = 96
-text = "PAUSE"
 script = ExtResource("1_jsi4g")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1804359580]
 layout_mode = 0
-offset_left = -336.0
+offset_left = -380.0
 offset_top = 159.0
-offset_right = -142.0
-offset_bottom = 392.0
+offset_right = 20.0
+offset_bottom = 509.0
+theme_override_constants/separation = 20
 
 [node name="resume" type="Button" parent="VBoxContainer" unique_id=475167960]
+custom_minimum_size = Vector2(400, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Resume"
+theme_override_styles/normal = SubResource("StyleBoxTexture_sx7qs")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_8x2wp")
+theme_override_styles/hover = SubResource("StyleBoxTexture_5pfmb")
+
+[node name="ResumeRemovebgPreview" type="Sprite2D" parent="VBoxContainer/resume" unique_id=1114455165]
+position = Vector2(197, 62)
+texture = ExtResource("2_ux4mk")
 
 [node name="restart" type="Button" parent="VBoxContainer" unique_id=1619542316]
+custom_minimum_size = Vector2(400, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Restart"
+theme_override_styles/normal = SubResource("StyleBoxTexture_6po1l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_uid7b")
+theme_override_styles/hover = SubResource("StyleBoxTexture_61vbe")
+
+[node name="RestartRemovebgPreview" type="Sprite2D" parent="VBoxContainer/restart" unique_id=1584225522]
+position = Vector2(205, 64)
+texture = ExtResource("3_hl2u7")
 
 [node name="menu" type="Button" parent="VBoxContainer" unique_id=1883072454]
+custom_minimum_size = Vector2(400, 120)
 layout_mode = 2
 theme_override_font_sizes/font_size = 48
-text = "Menu
+theme_override_styles/normal = SubResource("StyleBoxTexture_0quve")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_rw612")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ob6ac")
+text = "
 "
+
+[node name="MenuRemovebgPreview" type="Sprite2D" parent="VBoxContainer/menu" unique_id=1952914633]
+position = Vector2(197, 64)
+texture = ExtResource("4_hl2u7")
+
+[node name="PauseRemovebgPreview" type="Sprite2D" parent="VBoxContainer" unique_id=1034398537]
+position = Vector2(558, -114)
+scale = Vector2(3, 3)
+texture = ExtResource("2_m0p7e")
 
 [connection signal="button_down" from="VBoxContainer/resume" to="." method="_on_resume_button_down"]
 [connection signal="button_up" from="VBoxContainer/resume" to="." method="_on_resume_button_up"]

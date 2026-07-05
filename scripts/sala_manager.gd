@@ -20,6 +20,8 @@ var separacaoEntreSalas : int = 2
 @export var transicao : ColorRect
 var tempoDeTransicao : float = 0.2
 
+var produtosColetados : int = 0
+
 func _ready() -> void:
 	transicao.visible = false
 	transicao.self_modulate.a = 0

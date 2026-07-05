@@ -141,7 +141,8 @@ func _process(_delta: float) -> void:
 		#projetilInstancia.lancar(velocidadeProjetil, direcaoAtaque)
 		#ataqueCooldown.start()
 	if Input.is_action_pressed("ataque") and boomerangDisponivel:
-		var direcaoAtaque : Vector2 = (get_global_mouse_position() - global_position).normalized()
+		var direcaoAtaque : Vector2 = (get_global_mouse_position() - 
+		(global_position+Vector2.UP* 28)).normalized()
 		var projetilInstancia : Boomerang = PROJETIL_PLAYER.instantiate()
 		guardaProjetil.add_child(projetilInstancia)
 		projetilInstancia.corpoLancador = self
@@ -176,8 +177,10 @@ func derrotouBoss():
 	ganhouJogo = true
 	velocity = Vector2.ZERO
 	sprite.play("win")
+	SalaManager.produtosColetados = gradeProdutos.get_children().size()
 	await sprite.animation_finished
-	get_tree().call_deferred("change_scene_to_file", "res://cenas/menu.tscn")
+	get_tree().call_deferred("change_scene_to_file", "res://cenas/victory_screen.tscn")
+
 
 func mudarDescricao(desc : String):
 	descricao.text = desc
@@ -192,5 +195,6 @@ func morrer():
 	ganhouJogo = true
 	velocity = Vector2.ZERO
 	sprite.play("die")
+	
 	await sprite.animation_finished
 	get_tree().call_deferred("change_scene_to_file", "res://cenas/game_over_screen.tscn")

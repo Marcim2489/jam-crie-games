@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://dmwtagnk2wylh"]
+
+[ext_resource type="Script" uid="uid://dactr6nsjw4r1" path="res://scripts/victory_screen.gd" id="1_jfanu"]
+[ext_resource type="Texture2D" uid="uid://dx8xol5exysft" path="res://assets/hud/Menu-removebg-preview.png" id="2_7w2jt"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qvcyk"]
+load_path = "res://.godot/imported/BotaoGeral.png-f6c920a538a72c94e0fa514659bf8c6b.ctex"
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jfanu"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7w2jt"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+modulate_color = Color(0.7, 0.7, 0.7, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ennq8"]
+texture = SubResource("CompressedTexture2D_qvcyk")
+modulate_color = Color(0.7, 0.7, 0.7, 1)
+
+[node name="victory screen" type="Node2D" unique_id=1439194315 node_paths=PackedStringArray("textoColetados")]
+script = ExtResource("1_jfanu")
+textoColetados = NodePath("Label2")
+
+[node name="Label" type="Label" parent="." unique_id=1481854896]
+offset_left = 260.0
+offset_top = -15.0
+offset_right = 994.0
+offset_bottom = 338.0
+theme_override_font_sizes/font_size = 128
+text = "YOU WIN!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=1734917049]
+offset_left = 364.0
+offset_top = 339.0
+offset_right = 1098.0
+offset_bottom = 692.0
+theme_override_font_sizes/font_size = 48
+text = "Produtos coletados: 6
+"
+
+[node name="menu" type="Button" parent="." unique_id=290508481]
+offset_left = 502.0
+offset_top = 487.0
+offset_right = 768.0
+offset_bottom = 583.0
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxTexture_jfanu")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_7w2jt")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ennq8")
+
+[node name="MenuRemovebgPreview" type="Sprite2D" parent="menu" unique_id=1657529192]
+position = Vector2(137, 49)
+texture = ExtResource("2_7w2jt")
+
+[connection signal="pressed" from="menu" to="." method="_on_restart_pressed"]
