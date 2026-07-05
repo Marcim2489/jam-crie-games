@@ -20,7 +20,7 @@ func _ready() -> void:
 	SalaManager.entrouNaSala.connect(mostrarSala)
 	baseMap.visible = false
 	bossIcon.visible = false
-	initialIcon.visible = false
+	#initialIcon.visible = false
 	rareIcon1.visible = false
 	rareIcon2.visible = false
 	rareIcon3.visible = false
@@ -34,7 +34,7 @@ func posicionarIconesRaridade(salas : Array[Vector2i]):
 	rareIcon3.position = salaRara3 * 16
 	baseMap.visible = false
 	bossIcon.visible = false
-	initialIcon.visible = false
+	#initialIcon.visible = false
 	rareIcon1.visible = false
 	rareIcon2.visible = false
 	rareIcon3.visible = false
@@ -44,7 +44,7 @@ func posicionarIconeBoss(coord : Vector2i):
 	bossIcon.position = salaBoss * 16
 	baseMap.visible = false
 	bossIcon.visible = false
-	initialIcon.visible = false
+	#initialIcon.visible = false
 	rareIcon1.visible = false
 	rareIcon2.visible = false
 	rareIcon3.visible = false
@@ -54,7 +54,7 @@ func posicionarIconeInicial(coord : Vector2i):
 	initialIcon.position = salaInicio * 16
 	baseMap.visible = false
 	bossIcon.visible = false
-	initialIcon.visible = false
+	#initialIcon.visible = false
 	rareIcon1.visible = false
 	rareIcon2.visible = false
 	rareIcon3.visible = false

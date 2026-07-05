@@ -1,7 +1,7 @@
 extends Node2D
 
 func _ready() -> void:
-	MusicPlayer.playMusic(MusicPlayer.VIOLA_MINHA_VIOLA)
+	MusicPlayer.playMusic(MusicPlayer.VIOLA_MINHA_VIOLA, 1.3)
 
 func _on_restart_pressed() -> void:
 	

@@ -259,7 +259,7 @@ size = Vector2(16, 20)
 size = Vector2(20, 24)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_08jjx"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.24, 0.24, 0.24, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fpcyl"]
 bg_color = Color(0.78039217, 0, 0, 1)
@@ -357,7 +357,7 @@ script = ExtResource("19_qqci8")
 [node name="o" type="Node" parent="." unique_id=1983337978]
 
 [node name="cooldown" type="Timer" parent="." unique_id=373101170]
-wait_time = 0.7
+wait_time = 0.5
 one_shot = true
 
 [node name="timer dano" type="Timer" parent="." unique_id=911513541]
@@ -367,10 +367,10 @@ one_shot = true
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1417162634]
 
 [node name="ProgressBar" type="ProgressBar" parent="CanvasLayer" unique_id=147906616 node_paths=PackedStringArray("source")]
-offset_left = 320.0
-offset_top = 55.0
-offset_right = 940.0
-offset_bottom = 82.0
+offset_left = 651.0
+offset_top = 16.0
+offset_right = 1271.0
+offset_bottom = 43.0
 theme_override_styles/background = SubResource("StyleBoxFlat_08jjx")
 theme_override_styles/fill = SubResource("StyleBoxFlat_fpcyl")
 step = 1.0

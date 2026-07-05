@@ -19,5 +19,5 @@ position = Vector2(20, -19)
 [node name="inimigo cone3" parent="." unique_id=1629786133 instance=ExtResource("3_sienx")]
 position = Vector2(3, 17)
 
-[node name="inimigo cone4" parent="." unique_id=297414597 instance=ExtResource("3_sienx")]
-position = Vector2(100, 17)
+[node name="inimigo radar" parent="." unique_id=1685684091 instance=ExtResource("2_sienx")]
+position = Vector2(-19, -21)

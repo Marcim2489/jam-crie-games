@@ -185,6 +185,9 @@ func derrotouBoss():
 	ganhouJogo = true
 	velocity = Vector2.ZERO
 	sprite.play("win")
+	boneSprite.play("frente")
+	boneSprite.flip_h = false
+	sprite.flip_h = false
 	SalaManager.produtosColetados = gradeProdutos.get_children().size()
 	await sprite.animation_finished
 	get_tree().call_deferred("change_scene_to_file", "res://cenas/victory_screen.tscn")
@@ -203,6 +206,6 @@ func morrer():
 	ganhouJogo = true
 	velocity = Vector2.ZERO
 	sprite.play("die")
-	
+	sprite.flip_h = false
 	await sprite.animation_finished
 	get_tree().call_deferred("change_scene_to_file", "res://cenas/game_over_screen.tscn")
