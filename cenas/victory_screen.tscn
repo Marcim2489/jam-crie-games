@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dactr6nsjw4r1" path="res://scripts/victory_screen.gd" id="1_jfanu"]
 [ext_resource type="Texture2D" uid="uid://dx8xol5exysft" path="res://assets/hud/Menu-removebg-preview.png" id="2_7w2jt"]
+[ext_resource type="Texture2D" uid="uid://32ogkca70utn" path="res://assets/hud/YouWin.png" id="3_ennq8"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qvcyk"]
 load_path = "res://.godot/imported/BotaoGeral.png-f6c920a538a72c94e0fa514659bf8c6b.ctex"
@@ -22,6 +23,7 @@ script = ExtResource("1_jfanu")
 textoColetados = NodePath("Label2")
 
 [node name="Label" type="Label" parent="." unique_id=1481854896]
+visible = false
 offset_left = 260.0
 offset_top = -15.0
 offset_right = 994.0
@@ -53,5 +55,10 @@ theme_override_styles/hover = SubResource("StyleBoxTexture_ennq8")
 [node name="MenuRemovebgPreview" type="Sprite2D" parent="menu" unique_id=1657529192]
 position = Vector2(137, 49)
 texture = ExtResource("2_7w2jt")
+
+[node name="YouWin" type="Sprite2D" parent="." unique_id=234275767]
+position = Vector2(627, 169)
+scale = Vector2(4, 4)
+texture = ExtResource("3_ennq8")
 
 [connection signal="pressed" from="menu" to="." method="_on_restart_pressed"]
