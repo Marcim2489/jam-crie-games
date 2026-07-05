@@ -4,21 +4,33 @@
 [ext_resource type="Texture2D" uid="uid://d0ln7maeyit2k" path="res://assets/produtos/TenisJordan.png" id="1_y2h64"]
 [ext_resource type="Script" uid="uid://bvw8jcpoqjy4y" path="res://scripts/produto_button.gd" id="2_5y2nu"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5y2nu"]
+bg_color = Color(0.39, 0.39, 0.39, 0.69803923)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x0k31"]
+bg_color = Color(0.26, 0.26, 0.26, 0.69803923)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wgcdq"]
+bg_color = Color(0.26, 0.26, 0.26, 0.69803923)
+
 [node name="produto" type="Control" unique_id=2061231273]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_behvf")
 
-[node name="Button" type="Button" parent="." unique_id=304094175]
+[node name="Button2" type="Button" parent="." unique_id=1911653437]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0
 offset_bottom = 32.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_5y2nu")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x0k31")
+theme_override_styles/hover = SubResource("StyleBoxFlat_wgcdq")
 script = ExtResource("2_5y2nu")
-descricao = "Aumenta a velocidade"
+descricao = "Aumenta a velocidade de movimento"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1531640271]
 scale = Vector2(4, 4)

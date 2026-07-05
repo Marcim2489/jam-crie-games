@@ -7,16 +7,16 @@
 script = ExtResource("1_y33a2")
 
 [node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("2_xt05q")]
-position = Vector2(-118, -11)
+position = Vector2(-108, 24)
 
 [node name="inimigo radar2" parent="." unique_id=2040882856 instance=ExtResource("2_xt05q")]
-position = Vector2(-120, -78)
+position = Vector2(-110, -41)
 
 [node name="inimigo radar" parent="." unique_id=55017509 instance=ExtResource("2_xt05q")]
-position = Vector2(99, -12)
+position = Vector2(114, 26)
 
 [node name="inimigo radar3" parent="." unique_id=677138091 instance=ExtResource("2_xt05q")]
-position = Vector2(101, -75)
+position = Vector2(112, -43)
 
 [node name="inimigo radar4" parent="." unique_id=14144587 instance=ExtResource("2_xt05q")]
-position = Vector2(-10, -42)
+position = Vector2(2, -10)

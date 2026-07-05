@@ -4,21 +4,33 @@
 [ext_resource type="Script" uid="uid://bvw8jcpoqjy4y" path="res://scripts/produto_button.gd" id="2_1qdje"]
 [ext_resource type="Texture2D" uid="uid://wfser0qanole" path="res://assets/produtos/Pizza.png" id="2_21tt3"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1qdje"]
+bg_color = Color(0.39, 0.39, 0.39, 0.69803923)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_huc7p"]
+bg_color = Color(0.26, 0.26, 0.26, 0.69803923)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e3rsy"]
+bg_color = Color(0.26, 0.26, 0.26, 0.69803923)
+
 [node name="produto" type="Control" unique_id=2061231273]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_21tt3")
 
-[node name="Button" type="Button" parent="." unique_id=1750965549]
+[node name="Button2" type="Button" parent="." unique_id=690464396]
 custom_minimum_size = Vector2(64, 64)
 layout_mode = 0
 offset_left = -32.0
 offset_top = -32.0
 offset_right = 32.0
 offset_bottom = 32.0
+theme_override_styles/normal = SubResource("StyleBoxFlat_1qdje")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_huc7p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e3rsy")
 script = ExtResource("2_1qdje")
-descricao = "Aumenta velocidade do projetil"
+descricao = "Aumenta a velocidade do projetil"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1531640271]
 scale = Vector2(4, 4)

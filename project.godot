@@ -84,6 +84,7 @@ resetar={
 2d_physics/layer_4="ataque player"
 2d_physics/layer_5="ataque inimigo"
 2d_physics/layer_6="portas"
+2d_physics/layer_7="agua"
 
 [physics]
 
@@ -93,3 +94,4 @@ resetar={
 
 textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)

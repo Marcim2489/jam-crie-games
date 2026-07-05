@@ -4,6 +4,7 @@ var pausado : bool = false
 var botao1Decido : bool = false
 var botao2Decido : bool = false
 var botao3Decido : bool = false
+@export var grade : GridContainer
 
 func _ready() -> void:
 	visible = false
@@ -21,12 +22,20 @@ func togglePause():
 			visible = false
 			get_tree().paused = false
 			get_tree().root.add_child(SalaManager.SFX_BUTTON_PLAYER.instantiate())
+			if grade != null:
+				grade.columns = 2
+				grade.position = Vector2(48, 356)
+				SalaManager.emititVerBotoes(false)
 	else:
 		if pausado == false:
 			pausado = true
 			visible = true
 			get_tree().paused = true
 			get_tree().root.add_child(SalaManager.SFX_BUTTON_PLAYER.instantiate())
+			if grade != null:
+				grade.columns = 6
+				grade.position = Vector2(600, 300)
+				SalaManager.emititVerBotoes(true)
 
 func _on_resume_pressed() -> void:
 	#get_tree().add_child(SalaManager.SFX_BUTTON_PLAYER.instantiate())

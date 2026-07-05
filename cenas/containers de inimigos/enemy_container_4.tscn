@@ -10,20 +10,20 @@
 script = ExtResource("1_ropm7")
 
 [node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("2_mq6av")]
-position = Vector2(-73, -16)
+position = Vector2(-53, 21)
 
 [node name="inimigo bueiro" parent="." unique_id=384607849 instance=ExtResource("3_ropm7")]
 z_index = 1
-position = Vector2(48, -31)
+position = Vector2(56, 1)
 
 [node name="inimigo cone" parent="." unique_id=108300116 instance=ExtResource("4_aebal")]
-position = Vector2(67, -25)
+position = Vector2(72, 2)
 
 [node name="inimigo radar" parent="." unique_id=2065620697 instance=ExtResource("2_mq6av")]
-position = Vector2(54, -14)
+position = Vector2(91, 23)
 
 [node name="inimigo radar2" parent="." unique_id=2040882856 instance=ExtResource("2_mq6av")]
-position = Vector2(-120, -78)
+position = Vector2(-94, -38)
 
 [node name="inimigo barreira" parent="." unique_id=612032006 instance=ExtResource("5_nknhk")]
-position = Vector2(-11, -48)
+position = Vector2(3, -18)

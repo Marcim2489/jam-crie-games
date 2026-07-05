@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://dq48h1wr1t0s6"]
+[gd_scene format=4 uid="uid://dtwbawleipr55"]
 
 [ext_resource type="Texture2D" uid="uid://bsagioj6ecrd3" path="res://assets/tilemap placeholder.png" id="1_1ijdc"]
 [ext_resource type="Script" uid="uid://cc1g1p42xvy6f" path="res://scripts/sala.gd" id="1_7is6j"]

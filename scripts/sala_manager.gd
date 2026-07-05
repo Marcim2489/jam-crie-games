@@ -24,6 +24,11 @@ var tempoDeTransicao : float = 0.2
 
 var produtosColetados : int = 0
 
+signal verBotoes (enable : bool)
+
+func emititVerBotoes(enable : bool):
+	verBotoes.emit(enable)
+
 func _ready() -> void:
 	transicao.visible = false
 	transicao.self_modulate.a = 0
