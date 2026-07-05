@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://b1mjuqegu6h44"]
+
+[ext_resource type="Texture2D" uid="uid://d3r8xwicfusy5" path="res://assets/produtos/Marmitex.png" id="1_4fqdx"]
+[ext_resource type="Script" uid="uid://co1o6aa8mrqpw" path="res://scripts/marmitex.gd" id="1_mfew7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wx7i4"]
+size = Vector2(14, 9)
+
+[node name="MARMITEX" type="Area2D" unique_id=1717425248]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_mfew7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=938293354]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_wx7i4")
+
+[node name="Marmitex" type="Sprite2D" parent="." unique_id=1251626454]
+position = Vector2(0, -1)
+texture = ExtResource("1_4fqdx")

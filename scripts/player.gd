@@ -188,6 +188,7 @@ func derrotouBoss():
 	boneSprite.play("frente")
 	boneSprite.flip_h = false
 	sprite.flip_h = false
+	hurtbox.set_deferred("monitoring", false)
 	SalaManager.produtosColetados = gradeProdutos.get_children().size()
 	await sprite.animation_finished
 	get_tree().call_deferred("change_scene_to_file", "res://cenas/victory_screen.tscn")

@@ -32,6 +32,12 @@ func terminarImunidade():
 	for p in colisoesP:
 		p.set_deferred("disabled", false)
 
+func curar(cura : int):
+	vidaAtual += cura
+	if vidaAtual > vidaMaxima:
+		vidaAtual = vidaMaxima
+	mudouVida.emit(vidaAtual, vidaMaxima)
+
 func tomarDano(body : Node2D):
 	if imunidadeTimer != null:
 		if imunidadeTimer.is_stopped() == false:

@@ -46,6 +46,7 @@ func aoMudarSala(coord : Vector2i):
 		salasViajadas+=1
 		if salasViajadas >= salasParaReativar:
 			derrotada = false
+			salasViajadas = 0
 		return
 	if derrotada:
 		return
