@@ -28,7 +28,7 @@ shape = SubResource("RectangleShape2D_05l4m")
 disabled = true
 
 [node name="life timer" type="Timer" parent="." unique_id=1633599773]
-wait_time = 3.0
+wait_time = 1.7999999999999998
 one_shot = true
 
 [node name="hitbox" type="CharacterBody2D" parent="." unique_id=2029996897]
