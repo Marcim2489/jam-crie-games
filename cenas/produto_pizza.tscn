@@ -30,7 +30,7 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_1qdje")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_huc7p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_e3rsy")
 script = ExtResource("2_1qdje")
-descricao = "Aumenta a velocidade do projetil"
+descricao = "Aumenta o alcance do projetil"
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1531640271]
 scale = Vector2(4, 4)
