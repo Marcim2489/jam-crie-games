@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://clibid3u2nbng"]
+
+[ext_resource type="AudioStream" uid="uid://c6kqe35q8u16m" path="res://assets/sfx/menubotao.mp3" id="1_fvdqw"]
+[ext_resource type="Script" uid="uid://cx6c6wotpht1m" path="res://scripts/sfx_hit_player.gd" id="2_j51v4"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=1928624728]
+process_mode = 3
+stream = ExtResource("1_fvdqw")
+volume_db = 5.0
+autoplay = true
+script = ExtResource("2_j51v4")

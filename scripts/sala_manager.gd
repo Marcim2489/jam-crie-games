@@ -1,5 +1,7 @@
 extends Node
 
+const SFX_BUTTON_PLAYER = preload("uid://clibid3u2nbng")
+
 var salaAtual : Vector2i
 
 signal entrouNaSala (sala : Vector2i)

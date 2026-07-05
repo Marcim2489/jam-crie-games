@@ -1,21 +1,51 @@
 extends Node
 class_name GeradorDeSalas
 
-const SALA_1_BAIXO : Array[String] = ["uid://75jsx1obehin"]
-const SALA_1_CIMA : Array[String] = ["uid://wg50eu5ylb3m"]
-const SALA_1_DIREITA : Array[String] = ["uid://cswresj13x7l6"]
-const SALA_1_ESQUERDA : Array[String] = ["uid://b3hg7sgcrsqra"]
-const SALA_2_BAIXO_DIREITA : Array[String] = ["uid://bjxxg5i6phwyg"]
-const SALA_2_BAIXO_ESQUERDA :Array[String] = ["uid://d4fa850shyu5c"]
-const SALA_2_CIMA_DIREITA : Array[String] = ["uid://cgwepxik1k18y"]
-const SALA_2_CIMA_ESQUERDA : Array[String] = ["uid://dmb8o6m5bjf6i"]
-const SALA_2_HORIZONTAL : Array[String] = ["uid://ssjy6c74tsw4"]
-const SALA_2_VERTICAL : Array[String] = ["uid://j3wxchbqg1kb"]
-const SALA_3_MBAIXO : Array[String] = ["uid://ddilrtu71cbhc"]
-const SALA_3_MCIMA : Array[String] = ["uid://cxy8r3afxo7dk"]
-const SALA_3_MDIREITA : Array[String] = ["uid://cfbx6qoj0y75s"]
-const SALA_3_MESQUERDA : Array[String] = ["uid://bpxbkclkntq63"]
-const SALA_4 : Array[String] = ["uid://dq48h1wr1t0s6"]
+const SALA_1_BAIXO : Array[String] = ["uid://bfxk6qasmyayj",
+"uid://buoqq45ctd776"
+]
+const SALA_1_CIMA : Array[String] = ["uid://bwk55a47vu1rq",
+"uid://bgff4rspbpqit"
+]
+const SALA_1_DIREITA : Array[String] = ["uid://ceijyrtv0psio",
+"uid://b3jpmhgkv3wpu"
+]
+const SALA_1_ESQUERDA : Array[String] = ["uid://qrp3vbhcmy46",
+"uid://dnefyld7ueslw"
+]
+const SALA_2_BAIXO_DIREITA : Array[String] = ["uid://bcxwp0og7w1kv",
+"uid://bpjyys3bov5iy"
+]
+const SALA_2_BAIXO_ESQUERDA :Array[String] = ["uid://de74dkg2cjjw",
+"uid://citkgwaegrgw8"
+]
+const SALA_2_CIMA_DIREITA : Array[String] = ["uid://8meerot418wx",
+"uid://bisa845dc4c4c"
+]
+const SALA_2_CIMA_ESQUERDA : Array[String] = ["uid://yjpwekfop4mq",
+"uid://que0iptyp40u"
+]
+const SALA_2_HORIZONTAL : Array[String] = ["uid://c8xmouhp83xvj",
+"uid://d2klxd1uxco72"
+]
+const SALA_2_VERTICAL : Array[String] = ["uid://bbvw243qnk43y",
+"uid://bt00xbc23slwk"
+]
+const SALA_3_MBAIXO : Array[String] = ["uid://bwuur3rcaj0ca",
+"uid://cxarbbiudv05f"
+]
+const SALA_3_MCIMA : Array[String] = ["uid://dv44tqk16iyfb",
+"uid://dlfaaf07f465n"
+]
+const SALA_3_MDIREITA : Array[String] = ["uid://cqn34viuplhrg",
+"uid://bwiegda1randk"
+]
+const SALA_3_MESQUERDA : Array[String] = ["uid://c6s5safqrmvo7",
+"uid://b0cn2dg1ebpsv"
+]
+const SALA_4 : Array[String] = ["uid://dal8p0elo5sae",
+"uid://dttinvn32n506"
+]
 
 const CASA_1_BAIXO : String = "uid://lh2ciohauknr"
 const CASA_1_CIMA : String = "uid://ca68mm587nn3r"

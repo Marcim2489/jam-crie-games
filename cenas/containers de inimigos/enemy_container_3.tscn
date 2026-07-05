@@ -21,6 +21,3 @@ position = Vector2(-38, 11)
 
 [node name="inimigo barreira4" parent="." unique_id=62028155 instance=ExtResource("3_6ehsq")]
 position = Vector2(-23, -34)
-
-[node name="inimigo barreira5" parent="." unique_id=34795211 instance=ExtResource("3_6ehsq")]
-position = Vector2(-17, 55)

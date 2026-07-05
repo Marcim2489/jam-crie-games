@@ -7,6 +7,7 @@ class_name Entidade
 @export var sprite : AnimatedSprite2D
 @export var timerDano : Timer
 signal morreu
+const SFX_HIT_PLAYER = preload("uid://ci5posjl4ee6l")
 
 func _ready() -> void:
 	if(hurtbox != null):
@@ -14,6 +15,7 @@ func _ready() -> void:
 		hurtbox.recebeuDano.connect(aoReceberDano)
 
 func aoReceberDano():
+	get_tree().current_scene.add_child(SFX_HIT_PLAYER.instantiate())
 	sprite.self_modulate.g = 0
 	sprite.self_modulate.b = 0
 	sprite.self_modulate.r = 0.7

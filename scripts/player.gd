@@ -9,6 +9,8 @@ class_name Player
 @export var gradeProdutos : GridContainer
 @export var hbox : HBoxContainer
 @export var descricao : Label
+@export var tocadorAudioAndar : AudioStreamPlayer2D
+@export var tocadorAudioDano : AudioStreamPlayer2D
 
 var direcao : Vector2 = Vector2.ZERO
 var boomerangDisponivel : bool = true
@@ -55,6 +57,7 @@ func atualizarGrid():
 			hbox.get_child(i).color = Color.GRAY
 		i+=1
 func aoReceberDano():
+	tocadorAudioDano.play()
 	#print(gradeProdutos.get_children().size())
 	if gradeProdutos.get_children().size() >=1:
 		hitsTomados+=1
@@ -93,6 +96,10 @@ func _process(_delta: float) -> void:
 	if(Input.is_action_pressed("ui_up")):
 		direcaoAtual.y -=1
 	direcaoAtual = direcaoAtual.normalized()
+	if direcaoAtual != Vector2.ZERO and tocadorAudioAndar.playing==false:
+		tocadorAudioAndar.play()
+	elif direcaoAtual == Vector2.ZERO and tocadorAudioAndar.playing:
+		tocadorAudioAndar.stop()
 	velocity = velocidadeMovimento * direcaoAtual
 	if direcao != direcaoAtual and direcaoAtual != Vector2.ZERO:
 		direcao = direcaoAtual

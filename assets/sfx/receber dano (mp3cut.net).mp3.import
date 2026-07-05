@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cnl2pbhbukeqb"
+path="res://.godot/imported/receber dano (mp3cut.net).mp3-81fd7d15ee08b5eac82310e7d839de2d.mp3str"
+
+[deps]
+
+source_file="res://assets/sfx/receber dano (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/receber dano (mp3cut.net).mp3-81fd7d15ee08b5eac82310e7d839de2d.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

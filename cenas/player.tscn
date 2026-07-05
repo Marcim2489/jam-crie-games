@@ -15,6 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://d4m1p7mqca7hs" path="res://assets/BoneFixoLadoEsq.png" id="9_ym2kn"]
 [ext_resource type="Texture2D" uid="uid://cjd07eh3fhogg" path="res://assets/BoneFixoLadoArrumado.png" id="10_tckef"]
 [ext_resource type="PackedScene" uid="uid://besef31ukj3dy" path="res://cenas/pause_menu.tscn" id="13_ym2kn"]
+[ext_resource type="AudioStream" uid="uid://b5dg0353vllul" path="res://assets/sfx/andando.mp3" id="16_6ptbh"]
+[ext_resource type="AudioStream" uid="uid://cnl2pbhbukeqb" path="res://assets/sfx/receber dano (mp3cut.net).mp3" id="17_gonb2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xsgua"]
 atlas = ExtResource("2_s1iqd")
@@ -446,7 +448,7 @@ bg_color = Color(0.79607844, 0.10980392, 0.10980392, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kthid"]
 bg_color = Color(0, 0.95686275, 0, 1)
 
-[node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "boneSprite", "timerImunidade", "gradeProdutos", "hbox", "descricao", "hurtbox", "guardaProjetil", "sprite", "timerDano") groups=["Player"]]
+[node name="player" type="CharacterBody2D" unique_id=175035773 node_paths=PackedStringArray("ataqueCooldown", "boneSprite", "timerImunidade", "gradeProdutos", "hbox", "descricao", "tocadorAudioAndar", "tocadorAudioDano", "hurtbox", "guardaProjetil", "sprite", "timerDano") groups=["Player"]]
 z_index = 2
 y_sort_enabled = true
 collision_layer = 2
@@ -459,6 +461,8 @@ timerImunidade = NodePath("imunidade")
 gradeProdutos = NodePath("CanvasLayer/PAUSE MENU/GridContainer")
 hbox = NodePath("CanvasLayer/HBoxContainer")
 descricao = NodePath("CanvasLayer/PAUSE MENU/descricao")
+tocadorAudioAndar = NodePath("audio andar")
+tocadorAudioDano = NodePath("audio dano")
 hurtbox = NodePath("hurtbox")
 guardaProjetil = NodePath("O")
 sprite = NodePath("AnimatedSprite2D")
@@ -580,3 +584,14 @@ color = Color(1, 0, 0, 1)
 [node name="daninho" type="Timer" parent="." unique_id=1920956024]
 wait_time = 0.08
 one_shot = true
+
+[node name="audio andar" type="AudioStreamPlayer2D" parent="." unique_id=2036580156]
+stream = ExtResource("16_6ptbh")
+volume_db = -1.0
+
+[node name="audio dano" type="AudioStreamPlayer2D" parent="." unique_id=505526949]
+stream = ExtResource("17_gonb2")
+volume_db = 9.0
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=311314296]
+position = Vector2(0, -16)

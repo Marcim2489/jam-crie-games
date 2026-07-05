@@ -20,20 +20,25 @@ func togglePause():
 			pausado = false
 			visible = false
 			get_tree().paused = false
+			get_tree().root.add_child(SalaManager.SFX_BUTTON_PLAYER.instantiate())
 	else:
 		if pausado == false:
 			pausado = true
 			visible = true
 			get_tree().paused = true
+			get_tree().root.add_child(SalaManager.SFX_BUTTON_PLAYER.instantiate())
 
 func _on_resume_pressed() -> void:
+	#get_tree().add_child(SalaManager.SFX_BUTTON_PLAYER.instantiate())
 	togglePause()
 
 func _on_restart_pressed() -> void:
+	get_tree().root.add_child(SalaManager.SFX_BUTTON_PLAYER.instantiate())
 	get_tree().paused = false
 	get_tree().reload_current_scene()
 
 func _on_menu_pressed() -> void:
+	get_tree().root.add_child(SalaManager.SFX_BUTTON_PLAYER.instantiate())
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://cenas/menu.tscn")
 
