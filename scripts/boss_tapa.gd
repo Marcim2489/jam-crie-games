@@ -6,6 +6,11 @@ var iniciouTapa : bool = false
 var posicaoDetectada : Vector2
 
 func enterState():
+	if boss.ultimoAtaqueTapa:
+		boss.repetidos+=1
+	else:
+		boss.repetidos = 0
+	boss.ultimoAtaqueTapa = true
 	posicaoDetectada = boss.player.global_position
 	match boss.getPlayerAproxDirection():
 		Vector2.RIGHT:

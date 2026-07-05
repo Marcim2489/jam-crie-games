@@ -526,7 +526,7 @@ offset_top = 356.0
 offset_right = 599.0
 offset_bottom = 916.0
 theme_override_constants/h_separation = 16
-columns = 7
+columns = 2
 
 [node name="PAUSE MENU" parent="CanvasLayer" unique_id=361668171 node_paths=PackedStringArray("grade") instance=ExtResource("13_ym2kn")]
 grade = NodePath("../GridContainer")

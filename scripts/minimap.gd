@@ -32,14 +32,32 @@ func posicionarIconesRaridade(salas : Array[Vector2i]):
 	rareIcon2.position = salaRara2 * 16
 	salaRara3 = salas[2]
 	rareIcon3.position = salaRara3 * 16
+	baseMap.visible = false
+	bossIcon.visible = false
+	initialIcon.visible = false
+	rareIcon1.visible = false
+	rareIcon2.visible = false
+	rareIcon3.visible = false
 
 func posicionarIconeBoss(coord : Vector2i):
 	salaBoss = coord
 	bossIcon.position = salaBoss * 16
+	baseMap.visible = false
+	bossIcon.visible = false
+	initialIcon.visible = false
+	rareIcon1.visible = false
+	rareIcon2.visible = false
+	rareIcon3.visible = false
 
 func posicionarIconeInicial(coord : Vector2i):
 	salaInicio = coord
 	initialIcon.position = salaInicio * 16
+	baseMap.visible = false
+	bossIcon.visible = false
+	initialIcon.visible = false
+	rareIcon1.visible = false
+	rareIcon2.visible = false
+	rareIcon3.visible = false
 
 func colocarSala(sala : Vector2i, tipoDeSala : Vector2i):
 	baseMap.set_cell(sala, 1, tipoDeSala)

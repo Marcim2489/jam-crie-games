@@ -3,6 +3,11 @@ extends BossState
 var lancouXingo : bool = false
 
 func enterState():
+	if boss.ultimoAtaqueTapa == false:
+		boss.repetidos+=1
+	else:
+		boss.repetidos = 0
+	boss.ultimoAtaqueTapa = false
 	lancouXingo = false
 	match boss.getPlayerAproxDirection():
 		Vector2.RIGHT:

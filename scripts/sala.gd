@@ -1,6 +1,7 @@
 extends Node2D
 class_name Sala
 
+@export var rara : bool = false 
 var coordenada : Vector2i
 var derrotada : bool = false
 var salasViajadas : int = 0
@@ -24,6 +25,8 @@ func _ready() -> void:
 	y_sort_enabled = true
 
 func aoMudarSala(coord : Vector2i):
+	if rara:
+		return
 	if coord == SalaManager.salaFinal and coord == coordenada:
 		ativada.emit()
 		var boss : Boss = BOSS.instantiate()
@@ -33,6 +36,7 @@ func aoMudarSala(coord : Vector2i):
 		return
 	if coord == SalaManager.salaInicial:
 		return
+	
 	if coord != coordenada:
 		for c in get_children():
 			if c is EnemyContainer:
@@ -48,6 +52,7 @@ func aoMudarSala(coord : Vector2i):
 	spawnarInimigos()
 
 func spawnarInimigos():
+	
 	#print("inimigos")
 	ativada.emit()
 	var container : EnemyContainer = CONTAINERS.pick_random().instantiate()

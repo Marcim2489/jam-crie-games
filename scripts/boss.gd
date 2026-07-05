@@ -15,6 +15,9 @@ const PROJETIL_BOSS_XINGO = preload("uid://cng72e2buexmu")
 var morto : bool = false
 var player : Player
 
+var repetidos : int = 0
+var ultimoAtaqueTapa : bool = false
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 	if(hurtbox != null):

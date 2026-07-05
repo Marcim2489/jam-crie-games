@@ -32,6 +32,11 @@ func updateState(_delta: float) -> BossState:
 			boss.sprite.flip_h = false
 	if boss.cooldownTimer.is_stopped():
 		#return boss.statesKeeper.states[1]
-		return [boss.statesKeeper.states[1],
-		boss.statesKeeper.states[2]].pick_random()
+		if boss.repetidos <=2:
+			return [boss.statesKeeper.states[1],
+			boss.statesKeeper.states[2]].pick_random()
+		if boss.ultimoAtaqueTapa:
+			return boss.statesKeeper.states[1]
+		else:
+			return boss.statesKeeper.states[2]
 	return null
