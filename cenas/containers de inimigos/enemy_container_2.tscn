@@ -8,16 +8,16 @@
 script = ExtResource("1_nhu4e")
 
 [node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("2_sienx")]
-position = Vector2(70, -9)
+position = Vector2(64, -23)
 
 [node name="inimigo cone" parent="." unique_id=927798106 instance=ExtResource("3_sienx")]
-position = Vector2(-28, -26)
+position = Vector2(-64, 3)
 
 [node name="inimigo cone2" parent="." unique_id=380323665 instance=ExtResource("3_sienx")]
-position = Vector2(24, -27)
+position = Vector2(38, -22)
 
 [node name="inimigo cone3" parent="." unique_id=1629786133 instance=ExtResource("3_sienx")]
-position = Vector2(66, 26)
+position = Vector2(19, 21)
 
 [node name="inimigo cone4" parent="." unique_id=297414597 instance=ExtResource("3_sienx")]
-position = Vector2(-17, 23)
+position = Vector2(124, 35)

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cyx2f6vbj3cb5"]
+
+[ext_resource type="Script" uid="uid://buao67dsl0toa" path="res://scripts/enemy_container.gd" id="1_y33a2"]
+[ext_resource type="PackedScene" uid="uid://dxhdi3nemo5jd" path="res://cenas/inimigo_radar.tscn" id="2_xt05q"]
+
+[node name="enemyContainer4" type="Node2D" unique_id=1933527162]
+script = ExtResource("1_y33a2")
+
+[node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("2_xt05q")]
+position = Vector2(-118, -11)
+
+[node name="inimigo radar2" parent="." unique_id=2040882856 instance=ExtResource("2_xt05q")]
+position = Vector2(-120, -78)
+
+[node name="inimigo radar" parent="." unique_id=55017509 instance=ExtResource("2_xt05q")]
+position = Vector2(99, -12)
+
+[node name="inimigo radar3" parent="." unique_id=677138091 instance=ExtResource("2_xt05q")]
+position = Vector2(101, -75)
+
+[node name="inimigo radar4" parent="." unique_id=14144587 instance=ExtResource("2_xt05q")]
+position = Vector2(-10, -42)

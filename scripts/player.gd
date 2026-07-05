@@ -64,6 +64,7 @@ func aoReceberDano():
 		if hitsTomados >= hitsParaPerderProduto:
 			hitsTomados = 0
 			perderProduto()
+			atualizarGrid()
 		else:
 			atualizarGrid()
 	else:

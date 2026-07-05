@@ -2,15 +2,23 @@
 
 [ext_resource type="Script" uid="uid://buao67dsl0toa" path="res://scripts/enemy_container.gd" id="1_sixsp"]
 [ext_resource type="PackedScene" uid="uid://dxhdi3nemo5jd" path="res://cenas/inimigo_radar.tscn" id="1_vik4y"]
+[ext_resource type="PackedScene" uid="uid://cnehml3iy31oh" path="res://cenas/inimigo_bueiro.tscn" id="3_gm1gh"]
+[ext_resource type="PackedScene" uid="uid://djyx8iirpc247" path="res://cenas/inimigo_cone.tscn" id="4_2deo6"]
 
 [node name="enemyContainer1" type="Node2D" unique_id=1933527162]
 script = ExtResource("1_sixsp")
 
 [node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("1_vik4y")]
-position = Vector2(70, -9)
+position = Vector2(108, -43)
 
 [node name="inimigo2" parent="." unique_id=469919512 instance=ExtResource("1_vik4y")]
-position = Vector2(-37, 25)
+position = Vector2(-110, 23)
 
 [node name="inimigo3" parent="." unique_id=1022038928 instance=ExtResource("1_vik4y")]
-position = Vector2(-38, -25)
+position = Vector2(27, 27)
+
+[node name="inimigo bueiro" parent="." unique_id=384607849 instance=ExtResource("3_gm1gh")]
+position = Vector2(-79, 0)
+
+[node name="inimigo cone" parent="." unique_id=1639914373 instance=ExtResource("4_2deo6")]
+position = Vector2(23, -21)

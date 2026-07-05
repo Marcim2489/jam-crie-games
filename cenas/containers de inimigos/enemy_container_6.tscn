@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://ckwjqf6y0aj2v"]
+
+[ext_resource type="Script" uid="uid://buao67dsl0toa" path="res://scripts/enemy_container.gd" id="1_ucpx1"]
+[ext_resource type="PackedScene" uid="uid://dxhdi3nemo5jd" path="res://cenas/inimigo_radar.tscn" id="2_owjg3"]
+[ext_resource type="PackedScene" uid="uid://djyx8iirpc247" path="res://cenas/inimigo_cone.tscn" id="3_54dvw"]
+[ext_resource type="PackedScene" uid="uid://cnehml3iy31oh" path="res://cenas/inimigo_bueiro.tscn" id="4_05kx5"]
+
+[node name="enemyContainer4" type="Node2D" unique_id=1933527162]
+script = ExtResource("1_ucpx1")
+
+[node name="inimigo" parent="." unique_id=1516495147 instance=ExtResource("2_owjg3")]
+position = Vector2(-118, -11)
+
+[node name="inimigo radar" parent="." unique_id=55017509 instance=ExtResource("2_owjg3")]
+position = Vector2(98, -74)
+
+[node name="inimigo cone" parent="." unique_id=301339185 instance=ExtResource("3_54dvw")]
+position = Vector2(-91, -30)
+
+[node name="inimigo cone2" parent="." unique_id=169378977 instance=ExtResource("3_54dvw")]
+position = Vector2(-12, -47)
+
+[node name="inimigo cone3" parent="." unique_id=88689875 instance=ExtResource("3_54dvw")]
+position = Vector2(66, -30)
+
+[node name="inimigo cone4" parent="." unique_id=957081054 instance=ExtResource("3_54dvw")]
+position = Vector2(-13, -18)
+
+[node name="inimigo bueiro" parent="." unique_id=384607849 instance=ExtResource("4_05kx5")]
+position = Vector2(-77, -32)
+
+[node name="inimigo bueiro2" parent="." unique_id=1006511111 instance=ExtResource("4_05kx5")]
+position = Vector2(49, -33)
+
+[node name="inimigo bueiro3" parent="." unique_id=878041085 instance=ExtResource("4_05kx5")]
+position = Vector2(-12, -34)

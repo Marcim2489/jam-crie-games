@@ -11,7 +11,9 @@ const CONTAINERS : Array = [
 	preload("uid://pkyur02kr0cy"),
 	preload("uid://bkw3t2b2blts1"),
 	preload("uid://462mwy7m5bdd"),
-	preload("uid://21w30a4u03vr")]
+	preload("uid://21w30a4u03vr"),
+	preload("uid://cyx2f6vbj3cb5"),
+	preload("uid://ckwjqf6y0aj2v")]
 const BOSS = preload("uid://cdy4qpwjjpfwt")
 
 signal ativada
